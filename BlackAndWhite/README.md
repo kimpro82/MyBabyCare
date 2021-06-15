@@ -1,4 +1,5 @@
 ## Black & White Book for My Baby
+- Reference ☞ https://docs.python.org/ko/3.10/library/turtle.html
 
 ### As-Is
 - Nothing
