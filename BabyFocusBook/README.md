@@ -81,10 +81,10 @@ while (True) :
 ```
 
 ##### Output 1 : bw = 1, pensize = 0
-![BW01_1](Images\BW01_1.gif)
+![BW01_1](images/BW01_1.gif)
 
 ##### Output 2 : bw = 0, pensize = 0
-![BW01_2](Images\BW01_2.gif)
+![BW01_2](images/BW01_2.gif)
 
 ##### Output 3 : bw = 1, pensize = 5
-![BW01_3](Images\BW01_3.gif)
+![BW01_3](images/BW01_3.gif)
