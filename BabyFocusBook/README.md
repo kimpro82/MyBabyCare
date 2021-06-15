@@ -11,6 +11,7 @@
 - Other language candidates : Web, VBA, BASIC, ……
 - Functions to add
     - Randomly generate and eliminate figures
+    - Improve figures : ex) star, butterfly, ……
     - Operate based on touch response
 
 
