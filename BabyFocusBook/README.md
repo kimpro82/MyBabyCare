@@ -5,10 +5,10 @@
 - Language : Python (Turtle Graphics)
 - Functions
     - Randomly generate N-polygon figures including circle
-    - Can choose color mode and border size
+    - Can choose color mode and set border size
 
 #### To-Be
-- Additional language candidates : Web, VBA, BASIC, ……
+- Other language candidates : Web, VBA, BASIC, ……
 - Functions to add
     - Randomly generate and eliminate figures
     - Operate based on touch response
