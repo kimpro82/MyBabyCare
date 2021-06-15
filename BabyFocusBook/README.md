@@ -53,8 +53,8 @@ def drawFigures(bw = 0, penSize = 0) :
             penColor = "white"
             fillColor = "black"
         else :
-            penColor = 'black'
-            fillColor = 'white'            
+            penColor = "black"
+            fillColor = "white"
         color(penColor, fillColor)
 
 

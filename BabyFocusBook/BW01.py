@@ -21,8 +21,16 @@ def drawFigures(bw = 0, penSize = 0) :
         col1 = '#' + '0' * (6 - len(hexNum1)) + hexNum1
         col2 = '#' + '0' * (6 - len(hexNum2)) + hexNum2
         color(col1, col2)               # color(pencolor, fillcolor)
-    else :
-        color("white", "black")  
+    elif (bw == 1) :
+        color("white", "black")
+    else :                              # bw == 2 : black or white figures
+        if (random.randint(0, 1)) :
+            penColor = "white"
+            fillColor = "black"
+        else :
+            penColor = "black"
+            fillColor = "white"
+        color(penColor, fillColor)
 
     # draw a random n-polygon figure
     pendown()                           # pendown() = pd() = down() : move with drawing
@@ -47,7 +55,7 @@ delay(0)                                # 0 : mostly faster
 
 n = 0
 while (True) :
-    drawFigures(bw = 1, penSize = 5)    # bw : 1 - b/w mode, 0 - color mode (default)
+    drawFigures(bw = 2, penSize = 10)   # bw : 0 - color (default), 1 - black, 2 - b/w
     n += 1
     if (n > 9) :
         clearscreen()
