@@ -16,17 +16,17 @@
 
 
 #### List
-- Black & White 1 (2021.06.15)
+- Black & White 1 - BW01.py (2021.06.15)
 
 
 ### Black & White 1 (2021.06.15)
 
+#### BW01.py
 ```python
 from turtle import *
 import random
 import time
 ```
-
 ```python
 def drawFigures(bw = 0, penSize = 0) :
 
@@ -70,7 +70,6 @@ def drawFigures(bw = 0, penSize = 0) :
     end_fill()
     time.sleep(1)
 ```
-
 ```python
 # main part
 
