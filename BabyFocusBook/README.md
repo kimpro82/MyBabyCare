@@ -90,14 +90,14 @@ while (True) :
         n = 0
 ```
 
-##### Output 1 : bw = 1, pensize = 0
+##### Output 1 : bw = 1, penSize = 0
 ![BW01_1](images/BW01_1.gif)
 
-##### Output 2 : bw = 0, pensize = 0
+##### Output 2 : bw = 0, penSize = 0
 ![BW01_2](images/BW01_2.gif)
 
-##### Output 3 : bw = 1, pensize = 5
+##### Output 3 : bw = 1, penSize = 5
 ![BW01_3](images/BW01_3.gif)
 
-##### Output 4 : bw = 2, pensize = 10
+##### Output 4 : bw = 2, penSize = 10
 ![BW01_4](images/BW01_4.gif)
