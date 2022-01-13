@@ -1,7 +1,7 @@
 # Dove's Step Simulation
 
 ### To-be
-1. ~~Draw random footprints on `HTML Canvas`~~ (done)
+1. ~~Draw random footprints on **HTML Canvas**~~ (done)
 2. Draw them more naturally with angle and speed
 3. Make them disappear gradually like ont the natural snowfield
 
