@@ -12,7 +12,7 @@
 ## [Dove's Step 1 (2022.01.13)](#list)
 
 - Generate random footprints on **HTML Canvas**
-- Draw the `canvas`' edges rounded with **CSS**
+- Draw the `canvas`' edges rounded with `border-radius` in **CSS**
 - Get position (x, y) on `canvas` that is located relatively
 - Draw footprints in detail with **trigonometric function**
 
