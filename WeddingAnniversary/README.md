@@ -85,6 +85,12 @@ body {
 body {
 	text-align: center;
 }
+
+#name1 {
+……
+	font-family: "Comic Sans MS", Times, serif;
+……
+}
 ```
 
 #### WeddingAnniversary6.js
@@ -153,7 +159,7 @@ setInterval(changeColor, 500);
 
 
 ## [5th Wedding Anniversary (2020.03.07)](#list)
-- Application of Colorful Show
+- Application of [Colorful Show](https://github.com/kimpro82/MyPractice/tree/master/Web#colorful-show-20200304)
 
 ![Wedding Anniversary](./Images/WeddingAnniversary5.gif)
 
