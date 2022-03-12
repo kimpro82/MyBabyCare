@@ -26,9 +26,10 @@ I know you are into me
 
 #### Mainly changed part of `WeddingAnniversary7.html`
 ```html
-……
-        <script defer src="WeddingAnniversary7.js"></script>
-……
+<head>
+	……
+	<script defer src="WeddingAnniversary7.js"></script>
+</head>
 ```
 
 #### Mainly changed part of `WeddingAnniversary7.css`
@@ -49,14 +50,12 @@ body {
 
 #### Mainly changed part of `WeddingAnniversary7.js`
 ```js
-……
         do                                                                          // to avoid black letters on the black background
         {
             randNumDec[i] = Math.floor(Math.random() * Math.pow(256, 3));           // generate RGB color (decimal)
             console.log(i, randNumDec[i]);                                          // test : ok
         }
         while (randNumDec[i] == 16777216);                                          // 256^3 = 16777216
-……
 ```
 
 
@@ -69,7 +68,6 @@ body {
 
 #### Mainly changed part of `WeddingAnniversary6.html`
 ```html
-……
 	<div id='name1' style="display:inline">
 		K R
 		<div id='heart' style="display:inline">
@@ -79,7 +77,6 @@ body {
 	<div id='name2' style="display:inline">
 		E Y
 	</div>
-……
 ```
 
 #### Mainly changed part of `WeddingAnniversary6.css`
@@ -93,8 +90,6 @@ body {
 	font-family: "Comic Sans MS", Times, serif;
 ……
 }
-
-……
 ```
 
 #### `WeddingAnniversary6.js`
@@ -125,7 +120,6 @@ setInterval(changeColor, 500);
 
 #### Mainly changed part of `WeddingAnniversary5_2.html`
 ```html
-……
 	<div id='name'>
 		K R
 		<div id='heart'>
@@ -140,13 +134,10 @@ setInterval(changeColor, 500);
 		</div>
 		th
 	</div>
-……
 ```
 
 #### Mainly changed part of `WeddingAnniversary5_2.css`
 ```css
-……
-
 #heart {
 	display: inline;
 }
