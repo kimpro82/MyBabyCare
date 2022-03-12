@@ -27,8 +27,8 @@ I know you are into me
 #### Mainly changed part of `WeddingAnniversary7.html`
 ```html
 <head>
-	……
-	<script defer src="WeddingAnniversary7.js"></script>
+    ……
+    <script defer src="WeddingAnniversary7.js"></script>
 </head>
 ```
 
@@ -42,20 +42,22 @@ body {
 ```
 ```css
 #name1 {
-	……
-	font-family: "Brush Script MT", "Comic Sans MS", Times, serif;
-	……
+    ……
+    font-family: "Brush Script MT", "Comic Sans MS", Times, serif;
+    ……
 }
 ```
 
 #### Mainly changed part of `WeddingAnniversary7.js`
 ```js
+……
         do                                                                          // to avoid black letters on the black background
         {
             randNumDec[i] = Math.floor(Math.random() * Math.pow(256, 3));           // generate RGB color (decimal)
             console.log(i, randNumDec[i]);                                          // test : ok
         }
         while (randNumDec[i] == 16777216);                                          // 256^3 = 16777216
+……
 ```
 
 
@@ -68,26 +70,26 @@ body {
 
 #### Mainly changed part of `WeddingAnniversary6.html`
 ```html
-	<div id='name1' style="display:inline">
-		K R
-		<div id='heart' style="display:inline">
-			<img src="heart2.gif">
-		</div>
-	</div>
-	<div id='name2' style="display:inline">
-		E Y
-	</div>
+    <div id='name1' style="display:inline">
+        K R
+        <div id='heart' style="display:inline">
+            <img src="heart2.gif">
+        </div>
+    </div>
+    <div id='name2' style="display:inline">
+        E Y
+    </div>
 ```
 
 #### Mainly changed part of `WeddingAnniversary6.css`
 ```css
 body {
-	text-align: center;
+    text-align: center;
 }
 
 #name1 {
 ……
-	font-family: "Comic Sans MS", Times, serif;
+    font-family: "Comic Sans MS", Times, serif;
 ……
 }
 ```
@@ -96,15 +98,15 @@ body {
 ```js
 function changeColor() {
 
-	const randNumDec = []; 	// for containing random numbers decimally
-	const randNumHex = []; 	// for containing converted numbers hexdecimally
-	const cssIdList = ["name1", "name2", "chameleon1", "chameleon2"]; // css id list to change colors
+    const randNumDec = [];     // for containing random numbers decimally
+    const randNumHex = [];     // for containing converted numbers hexdecimally
+    const cssIdList = ["name1", "name2", "chameleon1", "chameleon2"]; // css id list to change colors
 
-	for (let i = 0; i < 4 ; i++) {
-		randNumDec[i] = Math.floor(Math.random() * Math.pow(256, 3)); // generate RGB color (decimal)
-		randNumHex[i] = randNumDec[i].toString(16); // turn to the hexdecimal
-		document.getElementById(cssIdList[i]).style.color = '#' + randNumHex[i]; // style-color requires #XXXXXX
-	}
+    for (let i = 0; i < 4 ; i++) {
+        randNumDec[i] = Math.floor(Math.random() * Math.pow(256, 3)); // generate RGB color (decimal)
+        randNumHex[i] = randNumDec[i].toString(16); // turn to the hexdecimal
+        document.getElementById(cssIdList[i]).style.color = '#' + randNumHex[i]; // style-color requires #XXXXXX
+    }
 
 }
 
@@ -120,39 +122,39 @@ setInterval(changeColor, 500);
 
 #### Mainly changed part of `WeddingAnniversary5_2.html`
 ```html
-	<div id='name'>
-		K R
-		<div id='heart'>
-			<img src="heart.gif">
-		</div>
-		E Y
-	</div>
-	<div id='chameleon1'>
-		Celebrate Our
-		<div id='year'>
-			<img src="5.gif">
-		</div>
-		th
-	</div>
+    <div id='name'>
+        K R
+        <div id='heart'>
+            <img src="heart.gif">
+        </div>
+        E Y
+    </div>
+    <div id='chameleon1'>
+        Celebrate Our
+        <div id='year'>
+            <img src="5.gif">
+        </div>
+        th
+    </div>
 ```
 
 #### Mainly changed part of `WeddingAnniversary5_2.css`
 ```css
 #heart {
-	display: inline;
+    display: inline;
 }
 #heart img {
-	width: 80px;
-	height: auto;
+    width: 80px;
+    height: auto;
 }
 
 #year {
-	display: inline;
+    display: inline;
 }
 #year img {
-	vertical-align: -20px;
-	width: 100px;
-	height: auto;
+    vertical-align: -20px;
+    width: 100px;
+    height: auto;
 }
 ```
 
@@ -217,17 +219,17 @@ setInterval(changeColor, 500);
 #### `WeddingAnniversary5.js`
 ```js
 function changeColor() {
-	randNumDec1 = Math.floor(Math.random() * Math.pow(256, 3));
-	randNumDec2 = Math.floor(Math.random() * Math.pow(256, 3));
-	randNumDec3 = Math.floor(Math.random() * Math.pow(256, 3));
-	
-	randNumHex1 = randNumDec1.toString(16);
-	randNumHex2 = randNumDec2.toString(16);
-	randNumHex3 = randNumDec3.toString(16);
+    randNumDec1 = Math.floor(Math.random() * Math.pow(256, 3));
+    randNumDec2 = Math.floor(Math.random() * Math.pow(256, 3));
+    randNumDec3 = Math.floor(Math.random() * Math.pow(256, 3));
+    
+    randNumHex1 = randNumDec1.toString(16);
+    randNumHex2 = randNumDec2.toString(16);
+    randNumHex3 = randNumDec3.toString(16);
 
-	document.getElementById('name').style.color = '#' + randNumHex1;
-	document.getElementById('chameleon1').style.color = '#' + randNumHex2;
-	document.getElementById('chameleon2').style.color = '#' + randNumHex3;
+    document.getElementById('name').style.color = '#' + randNumHex1;
+    document.getElementById('chameleon1').style.color = '#' + randNumHex2;
+    document.getElementById('chameleon2').style.color = '#' + randNumHex3;
 }
 
 setInterval(changeColor, 500);
