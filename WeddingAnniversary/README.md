@@ -24,14 +24,14 @@ I know you are into me
 
 ![Wedding Anniversary 7](./Images/WeddingAnniversary7.gif)
 
-#### Mainly changed part of WeddingAnniversary7.html
+#### Mainly changed part of `WeddingAnniversary7.html`
 ```html
 ……
         <script defer src="WeddingAnniversary7.js"></script>
 ……
 ```
 
-#### Mainly changed part of WeddingAnniversary7.css
+#### Mainly changed part of `WeddingAnniversary7.css`
 ```css
 body {
     ……
@@ -47,7 +47,7 @@ body {
 }
 ```
 
-#### Mainly changed part of WeddingAnniversary7.js
+#### Mainly changed part of `WeddingAnniversary7.js`
 ```js
 ……
         do                                                                          // to avoid black letters on the black background
@@ -67,8 +67,9 @@ body {
 
 ![Wedding Anniversary 6](./Images/WeddingAnniversary6.gif)
 
-#### Mainly changed part of WeddingAnniversary6.html
+#### Mainly changed part of `WeddingAnniversary6.html`
 ```html
+……
 	<div id='name1' style="display:inline">
 		K R
 		<div id='heart' style="display:inline">
@@ -78,9 +79,10 @@ body {
 	<div id='name2' style="display:inline">
 		E Y
 	</div>
+……
 ```
 
-#### Mainly changed part of WeddingAnniversary6.css
+#### Mainly changed part of `WeddingAnniversary6.css`
 ```css
 body {
 	text-align: center;
@@ -91,9 +93,11 @@ body {
 	font-family: "Comic Sans MS", Times, serif;
 ……
 }
+
+……
 ```
 
-#### WeddingAnniversary6.js
+#### `WeddingAnniversary6.js`
 ```js
 function changeColor() {
 
@@ -119,8 +123,9 @@ setInterval(changeColor, 500);
 
 ![Wedding Anniversary 5 - 2](./Images/WeddingAnniversary5_2.gif)
 
-#### Mainly changed part of WeddingAnniversary5_2.html
+#### Mainly changed part of `WeddingAnniversary5_2.html`
 ```html
+……
 	<div id='name'>
 		K R
 		<div id='heart'>
@@ -135,10 +140,13 @@ setInterval(changeColor, 500);
 		</div>
 		th
 	</div>
+……
 ```
 
-#### Mainly changed part of WeddingAnniversary5_2.css
+#### Mainly changed part of `WeddingAnniversary5_2.css`
 ```css
+……
+
 #heart {
 	display: inline;
 }
@@ -163,7 +171,7 @@ setInterval(changeColor, 500);
 
 ![Wedding Anniversary](./Images/WeddingAnniversary5.gif)
 
-#### WeddingAnniversary5.html
+#### `WeddingAnniversary5.html`
 ```html
 <!DOCTYPE html>
 
@@ -192,7 +200,7 @@ setInterval(changeColor, 500);
 </html>
 ```
 
-#### WeddingAnniversary5.css
+#### `WeddingAnniversary5.css`
 ```css
 @charset "EUC-KR";
 
@@ -215,7 +223,7 @@ setInterval(changeColor, 500);
 }
 ```
 
-#### WeddingAnniversary5.js
+#### `WeddingAnniversary5.js`
 ```js
 function changeColor() {
 	randNumDec1 = Math.floor(Math.random() * Math.pow(256, 3));
