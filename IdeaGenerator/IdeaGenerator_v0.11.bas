@@ -22,7 +22,9 @@ End Sub
 
 
 Private Sub btnRun_Click()
+
     Application.Calculation = xlManual
         Call GenIdea
     Application.Calculation = xlAutomatic
+
 End Sub
