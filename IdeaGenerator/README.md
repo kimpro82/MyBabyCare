@@ -23,11 +23,17 @@ for my sister who is an aspiring writer
 
 #### Mainly changed parts of `IdeaGenerator_v0.11.bas`
 ```vba
-'Option Explicit                                                        ' Cause an error : i, j are not declared strictly
+'Option Explicit                                                            ' Cause an error : i, j are not declared strictly
 ```
 ```vba
-'            Cells(i + 3, j).Value = Str(pick + 2) & " " & Str(j + 7)    ' test
-            Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)
+            ……
+            If prop = 1 Then
+'               Cells(i + 3, j).Value = Str(pick + 2) & " " & Str(j + 7)    ' test
+                Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)
+            Else
+                Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j)
+            End If
+            ……
 ```
 
 
