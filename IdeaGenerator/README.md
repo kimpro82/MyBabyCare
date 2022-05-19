@@ -5,14 +5,18 @@ for my sister who is an aspiring writer
 
 ### List
 
-- [Idea Generator v0.11]()
-- [Idea Generator v0.1]()
+- [Idea Generator v0.11 (2022.05.19)]()
+- [Idea Generator v0.1 (2022.05.18)]()
 
 
 ## [Idea Generator v0.11 (2022.05.19)](#list)
 
 - Add **postpositions** and make able to **choose** if use them or not
 - Add **parameters validation** (not in code, but in **Excel** sheet)
+- To-Do :  
+&nbsp;&nbsp;- Print a line as an integrated sentence (suggested from my friend *2071*)  
+&nbsp;&nbsp;- Save as a seperated log file  
+&nbsp;&nbsp;- Expand to generate a parapraph with `KoGPT2` `HyperCLOVA` and so on
 
 ![Idea Generator v0.11](Images/GenIdea_v0.11.PNG)  
 ![Idea Generator v0.11](Images/GenIdea_v0.11_dict.PNG)
