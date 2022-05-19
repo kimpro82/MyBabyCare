@@ -1,6 +1,3 @@
-Option Explicit
-
-
 Sub GenIdea()
 
     Range("A4:F10000").ClearContents

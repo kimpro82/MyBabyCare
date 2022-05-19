@@ -1,4 +1,4 @@
-Option Explicit
+'Option Explicit                                                        ' Cause an error : i, j are not declared strictly
 
 
 Sub GenIdea()
