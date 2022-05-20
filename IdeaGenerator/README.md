@@ -12,10 +12,10 @@ for my sister who is an aspiring writer
 
 ## [Idea Generator v0.12 (2022.05.20)](#list)
 
-- Can print a line as an **integrated sentence** (suggested from my friend *2071*)
-&nbsp;&nbsp;- Can choose if intergrate or not
-&nbsp;&nbsp;- Contain postpositions automatically when choose to integrate
-&nbsp;&nbsp;- Change alignment automatically (left / center) 
+- Can print a line as an **integrated sentence** (suggested from my friend *2071*)  
+&nbsp;&nbsp;- Can choose if intergrate or not  
+&nbsp;&nbsp;- Contain postpositions automatically when choose to integrate  
+&nbsp;&nbsp;- Change alignment automatically (left / center)  
 &nbsp;&nbsp;- Add spaces more naturally when choose to intergrate
 
 ![Idea Generator v0.12](Images/GenIdea_v0.12.PNG)
