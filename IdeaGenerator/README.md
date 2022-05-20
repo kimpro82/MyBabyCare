@@ -93,7 +93,7 @@ Option Explicit
 - Add **postpositions** and make able to **choose** if use them or not
 - Add **parameters validation** (not in code, but in **Excel** sheet)
 - To-Do :  
-&nbsp;&nbsp;- Print a line as an integrated sentence (suggested from my friend *2071*)  
+&nbsp;&nbsp;- Print a line as an integrated sentence (suggested from my friend *2071*) ☞ done ([v0.12](#idea-generator-v012-20220520))  
 &nbsp;&nbsp;- Save as a seperated log file  
 &nbsp;&nbsp;- Expand to generate a parapraph with `KoGPT2` `HyperCLOVA` and so on
 
