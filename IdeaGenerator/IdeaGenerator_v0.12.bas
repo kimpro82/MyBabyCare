@@ -30,6 +30,7 @@ Sub GenIdea()
         sentence = ""                                                       ' initialize the sentence for each row
 
         For j = 1 To 6
+
             ' Get a word randomly
             Randomize
             pick = Int(Rnd * Sheet1.Cells(1, j)) + 1
@@ -43,18 +44,23 @@ Sub GenIdea()
                 Else
                     sentence = sentence & Sheet1.Cells(pick + 2, j) & Sheet1.Cells(2, j + 7) & " "
                 End If
-                
+
                 ' Print the completed sentence
                 If j = 6 Then
                     Cells(i + 3, 1).Value = sentence
                 End If
+
             ' Not integrated but contain postpositions
             ElseIf postp = 1 Then
+
 '               Cells(i + 3, j).Value = Str(pick + 2) & " " & Str(j + 7)    ' test
                 Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)
+
             ' Neither integrated nor not contain postpositions
             Else
+
                 Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j)
+
             End If
 
         Next j
