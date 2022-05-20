@@ -56,7 +56,7 @@ Sub GenIdea()
 '               Cells(i + 3, j).Value = Str(pick + 2) & " " & Str(j + 7)    ' test
                 Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)
 
-            ' Neither integrated nor not contain postpositions
+            ' Neither integrated nor contain postpositions
             Else
 
                 Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j)

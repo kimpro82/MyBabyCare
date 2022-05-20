@@ -75,7 +75,7 @@ Option Explicit
 
                 ……
 
-            ' Neither integrated nor not contain postpositions
+            ' Neither integrated nor contain postpositions
             Else
 
                 ……
