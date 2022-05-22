@@ -5,8 +5,87 @@ for my sister who is an aspiring writer
 
 ### List
 
+- [Idea Generator v0.12 (2022.05.20)](#idea-generator-v012-20220520)
 - [Idea Generator v0.11 (2022.05.19)](#idea-generator-v011-20220519)
 - [Idea Generator v0.1 (2022.05.18)](#idea-generator-v01-20220518)
+
+
+## [Idea Generator v0.12 (2022.05.20)](#list)
+
+- Can print a line as an **integrated sentence** (suggested from my friend *2071*)  
+&nbsp;&nbsp;- Can choose if integrate or not  
+&nbsp;&nbsp;- Contain postpositions automatically when choose to integrate  
+&nbsp;&nbsp;- Change alignment automatically (left / center)  
+&nbsp;&nbsp;- Add spaces more naturally when choose to integrate
+
+![Idea Generator v0.12](Images/GenIdea_v0.12.PNG)
+
+#### Mainly changed parts of `IdeaGenerator_v0.12.bas`
+```vba
+Option Explicit
+```
+```vba
+    ……
+    ' Parameters
+    Dim n, postp, integrated, pick As Integer
+    ……
+    integrated = Range("D2")
+
+    If integrated = 1 Then
+        Range("B2").Value = 1                                               ' an integrated sentence should contain postpositions
+        postp = Range("B2")
+        Range("A4:F10000").HorizontalAlignment = xlLeft                     ' left alignment when the sentence is integrated
+    Else
+        Range("A4:F10000").HorizontalAlignment = xlCenter                   ' center alignment when the sentence is not integrated
+    End If
+    ……
+```
+```vba
+    ……
+    ' Loop for i, j
+    Dim i, j As Integer
+    Dim sentence As String
+
+    For i = 1 To n
+
+        sentence = ""                                                       ' initialize the sentence for each row
+
+        For j = 1 To 6
+
+            ' Get a word randomly
+            ……
+
+            ' Integrated sentences
+            If integrated = 1 Then
+
+                ' Judge where insert spaces
+                If j = 5 Then
+                    sentence = sentence & Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7) & " "
+                Else
+                    sentence = sentence & Sheet1.Cells(pick + 2, j) & Sheet1.Cells(2, j + 7) & " "
+                End If
+
+                ' Print the completed sentence
+                If j = 6 Then
+                    Cells(i + 3, 1).Value = sentence
+                End If
+
+            ' Not integrated but contain postpositions
+            ElseIf postp = 1 Then
+
+                ……
+
+            ' Neither integrated nor contain postpositions
+            Else
+
+                ……
+
+            End If
+
+        Next j
+
+    Next i
+```
 
 
 ## [Idea Generator v0.11 (2022.05.19)](#list)
@@ -14,7 +93,7 @@ for my sister who is an aspiring writer
 - Add **postpositions** and make able to **choose** if use them or not
 - Add **parameters validation** (not in code, but in **Excel** sheet)
 - To-Do :  
-&nbsp;&nbsp;- Print a line as an integrated sentence (suggested from my friend *2071*)  
+&nbsp;&nbsp;- Print a line as an integrated sentence (suggested from my friend *2071*) ☞ done ([v0.12](#idea-generator-v012-20220520))  
 &nbsp;&nbsp;- Save as a seperated log file  
 &nbsp;&nbsp;- Expand to generate a parapraph with `KoGPT2` `HyperCLOVA` and so on
 
