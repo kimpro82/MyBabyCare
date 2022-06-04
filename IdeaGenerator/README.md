@@ -13,9 +13,14 @@ for my sister who is an aspiring writer
 
 ## [Idea Generator v0.20 (2022.06.03)](#list)
 
+- Can save sentences into a log file
+&nbsp;&nbsp;- Can choose if save or not
+- Improve design(?)
+&nbsp;&nbsp;- Add Title and rearrange the parameters' locations
+
 ![Idea Generator v0.20](Images/GenIdea_v0.20.PNG)
 
-#### GenIdeaLog_2022-06-04.txt (EUC-KR)
+#### `GenIdeaLog_2022-06-04.txt` (EUC-KR)
 ```txt
 2022-06-04 오후 11:39:05
 1 오크이/가 이번주 도구점에서 병사을/를 아이템 획득 때문에/위하여 마법공격하다 
