@@ -13,9 +13,9 @@ for my sister who is an aspiring writer
 
 ## [Idea Generator v0.20 (2022.06.03)](#list)
 
-- Can save sentences into a log file
+- Can save sentences into a log file  
 &nbsp;&nbsp;- Can choose if save or not
-- Improve design(?)
+- Improve design(?)  
 &nbsp;&nbsp;- Add Title and rearrange the parameters' locations
 
 ![Idea Generator v0.20](Images/GenIdea_v0.20.PNG)
