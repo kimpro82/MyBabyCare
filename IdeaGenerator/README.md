@@ -31,10 +31,11 @@ for my sister who is an aspiring writer
 
 ## [Idea Generator v0.20 (2022.06.03)](#list)
 
-- Can save sentences into a **log file**  
-&nbsp;&nbsp;- Can choose if save or not
-- Improve design(?)  
-&nbsp;&nbsp;- Add **title** and rearrange the parameters' locations
+- Add Feature : Can save sentences into a **log file** and choose if do it or not
+- Improve Design(?) : add **title** and rearrange the parameters' locations
+- Further Discussion about Technical Issues raised here:  
+&nbsp;&nbsp;- [`ByRef` vs `ByVal` (2022.06.05)](https://github.com/kimpro82/MyPractice/tree/master/VBA#byref-vs-byval-20220605)  
+&nbsp;&nbsp;- [Declare Plural Variable (2022.06.04)](https://github.com/kimpro82/MyPractice/tree/master/VBA#declare-plural-variable-20220604)
 
 ![Idea Generator v0.20](Images/GenIdea_v0.20.PNG)
 
