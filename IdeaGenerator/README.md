@@ -3,11 +3,115 @@
 for my sister who is an aspiring writer
 
 
+### To-Do
+
+| Subject | Detail | Related Version | Completion Date |
+|:-:|:--|:-:|:-:|
+| Feature | Open **Idea Generator**(main) and **Dictionary** sheets with the `Run` button | [v0.10](#idea-generator-v010-20220518) | 2022.05.18 |
+| | Select the number of sentences generated | [v0.10](#idea-generator-v010-20220518) | 2022.05.18 |
+| | Add **postpositions** and make able to choose if use them or not | [v0.11](#idea-generator-v011-20220519) | 2022.05.19 |
+| | Add **parameters validation** (not in code, but in **Excel** sheet) | [v0.11](#idea-generator-v011-20220519) | 2022.05.19 |
+| | Print a line as an **integrated sentence** | [v0.12](#idea-generator-v012-20220520) | 2022.05.20 |
+| | Save sentences into a **log file** | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
+| | - Bug Fix : Save properly whatever the parameters are | v0.21 (Coming) | (Coming) |
+| | Use **plural dictionaries** | (Coming) | (Coming) |
+| | **Generate a parapraph** with `KoGPT2` `HyperCLOVA` and so on | (Coming) | (Coming) |
+| Design | Add **title** and rearrange the parameters' locations | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
+| | More design improvement | (Coming) | (Coming) |
+| Refactoring | Architecture improvement | (Coming) | (Coming) |
+
+
 ### List
 
+- [Idea Generator v0.20 (2022.06.03)](#idea-generator-v020-20220603)
 - [Idea Generator v0.12 (2022.05.20)](#idea-generator-v012-20220520)
 - [Idea Generator v0.11 (2022.05.19)](#idea-generator-v011-20220519)
-- [Idea Generator v0.1 (2022.05.18)](#idea-generator-v01-20220518)
+- [Idea Generator v0.10 (2022.05.18)](#idea-generator-v010-20220518)
+
+
+## [Idea Generator v0.20 (2022.06.03)](#list)
+
+- Add Feature : Can save sentences into a **log file** and choose if do it or not
+- Improve Design(?) : add **title** and rearrange the parameters' locations
+- Further Discussion about Technical Issues raised here:  
+&nbsp;&nbsp;- [`ByRef` vs `ByVal` (2022.06.05)](https://github.com/kimpro82/MyPractice/tree/master/VBA#byref-vs-byval-20220605)  
+&nbsp;&nbsp;- [Declare Plural Variable (2022.06.04)](https://github.com/kimpro82/MyPractice/tree/master/VBA#declare-plural-variable-20220604)
+
+![Idea Generator v0.20](Images/GenIdea_v0.20.PNG)
+
+#### `GenIdeaLog_2022-06-04.txt` (EUC-KR)
+```txt
+2022-06-04 오후 11:39:05
+1 오크이/가 이번주 도구점에서 병사을/를 아이템 획득 때문에/위하여 마법공격하다 
+2 드루이드이/가 지난주 대장간에서 몬스터을/를 토벌 때문에/위하여 치료하다 
+3 드루이드이/가 먼 훗날 도구점에서 길드마스터을/를 토벌 때문에/위하여 기습하다 
+4 도적이/가 내일 들판에서 국왕을/를 아이템 획득 때문에/위하여 기습하다 
+5 도적이/가 오늘 여관에서 NPC을/를 아이템 획득 때문에/위하여 휴식하다 
+6 드루이드이/가 다음주 들판에서 동료을/를 아이템 획득 때문에/위하여 휴식하다 
+7 주술사이/가 지난주 여관에서 동료을/를 복수 때문에/위하여 치료하다 
+8 주술사이/가 다음주 던전에서 길드마스터을/를 토벌 때문에/위하여 마법공격하다 
+9 주술사이/가 얼마 후 여관에서 몬스터을/를 토벌 때문에/위하여 마법공격하다 
+10 도적이/가 이번주 여관에서 병사을/를 의뢰 때문에/위하여 포획하다 
+```
+
+#### Mainly changed parts of `IdeaGenerator_v0.20.bas`
+```vba
+Private Sub GenIdea()
+
+    ……
+
+    ' Parameters
+    Dim n As Integer, postp As Integer, integrated As Integer, pick As Integer, save As Integer
+
+    ……
+    save = Range("D3")
+
+    ……
+
+    ' Loop for i, j
+    Dim i As Integer, j As Integer                                          ' i is recognized as Variant/Double when Dim i, j As Integer
+    Dim sentence As String
+
+    For i = 1 To n
+
+        ……
+
+        ' Call RecordLog() for Saving into a separated log file
+        If save = 1 Then
+            Call RecordLog(i, sentence)
+        End If
+
+    Next i
+
+End Sub
+```
+```vba
+' Save sentences into a log file
+Private Sub RecordLog(ByRef i As Integer, ByRef sentence As String)
+
+    ' Set log file name
+    Dim path As String, timeInfo As String, logSentence As String
+    Dim timeInfo1 As Date, timeInfo2 As Date
+    timeInfo1 = Date
+    timeInfo2 = Time
+    timeInfo = timeInfo1 & " " & timeInfo2
+    path = ThisWorkbook.path & Application.PathSeparator & "GenIdeaLog_" & timeInfo1 & ".txt"
+
+    Dim fn As Integer
+    fn = FreeFile
+
+    ' Record the sentences
+    logSentence = i & " " & sentence
+    Open path For Append As #fn
+        If i = 1 Then                                                       ' when the log file should be initialized
+            Print #fn, timeInfo
+        End If
+        
+        Print #fn, logSentence
+    Close #fn
+
+End Sub
+```
 
 
 ## [Idea Generator v0.12 (2022.05.20)](#list)
@@ -92,10 +196,6 @@ Option Explicit
 
 - Add **postpositions** and make able to **choose** if use them or not
 - Add **parameters validation** (not in code, but in **Excel** sheet)
-- To-Do :  
-&nbsp;&nbsp;- Print a line as an integrated sentence (suggested from my friend *2071*) ☞ done ([v0.12](#idea-generator-v012-20220520))  
-&nbsp;&nbsp;- Save as a seperated log file  
-&nbsp;&nbsp;- Expand to generate a parapraph with `KoGPT2` `HyperCLOVA` and so on
 
 ![Idea Generator v0.11](Images/GenIdea_v0.11.PNG)  
 ![Idea Generator v0.11](Images/GenIdea_v0.11_dict.PNG)
@@ -123,14 +223,14 @@ Option Explicit
 ```
 
 
-## [Idea Generator v0.1 (2022.05.18)](#list)
+## [Idea Generator v0.10 (2022.05.18)](#list)
 
 - Initialize : open **Idea Generator**(main) and **Dictionary** sheets with the `Run` button
 - Can select the number of sentences generated
 - Test : Ok
 
-![Idea Generator v0.1](Images/GenIdea_v0.1.PNG)  
-![Idea Generator v0.1](Images/GenIdea_v0.1_dict.PNG)
+![Idea Generator v0.10](Images/GenIdea_v0.10.PNG)  
+![Idea Generator v0.10](Images/GenIdea_v0.10_dict.PNG)
 
 ```vba
 Sub GenIdea()
