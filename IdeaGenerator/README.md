@@ -23,10 +23,94 @@ for my sister who is an aspiring writer
 
 ### List
 
+- [Idea Generator v0.21 (2022.06.05)](#idea-generator-v021-20220605)
 - [Idea Generator v0.20 (2022.06.03)](#idea-generator-v020-20220603)
 - [Idea Generator v0.12 (2022.05.20)](#idea-generator-v012-20220520)
 - [Idea Generator v0.11 (2022.05.19)](#idea-generator-v011-20220519)
 - [Idea Generator v0.10 (2022.05.18)](#idea-generator-v010-20220518)
+
+
+## [Idea Generator v0.21 (2022.06.05)](#list)
+
+- Bug Fix : Save properly whatever the parameters are
+
+![Idea Generator v0.21](Images/GenIdea_v0.21.PNG)
+
+#### `GenIdeaLog_2022-06-05.txt` - Before (EUC-KR)
+```txt
+2022-06-05 오후 9:56:30
+1 
+2 
+……
+10 
+```
+
+#### `GenIdeaLog_2022-06-05.txt` - After (EUC-KR)
+```txt
+2022-06-05 오후 11:30:44
+1 오크 이번주 던전 길드마스터 복수 기습 
+2 엘프 이번주 도구점 국왕 레벨업 휴식 
+……
+10 엘프 이번주 바다 몬스터 아이템 획득 포획 
+```
+
+#### Mainly changed parts of `IdeaGenerator_v0.21.bas`
+```vba
+Private Sub GenIdea()
+
+    ……
+
+    ' Loop for i, j
+    ……
+    Dim sentence As String, phrase As String
+
+    For i = 1 To n
+
+        ……
+
+        For j = 1 To 6
+
+            phrase = ""                                                     ' initialize the phrase for each column
+
+            ……
+
+            ' Get a phrase
+            If postp = 1 Then
+                ' Judge if insert spaces or not
+                If j = 5 Then
+                    phrase = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)
+                Else
+                    phrase = Sheet1.Cells(pick + 2, j) & Sheet1.Cells(2, j + 7)
+                End If
+            Else
+                phrase = Sheet1.Cells(pick + 2, j)
+            End If
+
+            ' Assemble sentence whenever integrate or not
+            sentence = sentence & phrase & " "
+
+            ' Print each phrase or integrated sentence
+            ' If not integrate, print phrase on each cell
+            If integrated = 0 Then
+                Cells(i + 4, j).Value = phrase
+
+                ' test
+                ' Cells(i + 4, j).Value = Str(pick + 2) & " " & Str(j + 7)
+            ' If intergrated, print the completed sentence only when j = 6
+            Else
+                If j = 6 And integrated = 1 Then
+                    Cells(i + 4, 1).Value = sentence
+                End If
+            End If
+
+        Next j
+
+        ……
+
+    Next i
+
+End Sub
+```
 
 
 ## [Idea Generator v0.20 (2022.06.03)](#list)
@@ -44,13 +128,7 @@ for my sister who is an aspiring writer
 2022-06-04 오후 11:39:05
 1 오크이/가 이번주 도구점에서 병사을/를 아이템 획득 때문에/위하여 마법공격하다 
 2 드루이드이/가 지난주 대장간에서 몬스터을/를 토벌 때문에/위하여 치료하다 
-3 드루이드이/가 먼 훗날 도구점에서 길드마스터을/를 토벌 때문에/위하여 기습하다 
-4 도적이/가 내일 들판에서 국왕을/를 아이템 획득 때문에/위하여 기습하다 
-5 도적이/가 오늘 여관에서 NPC을/를 아이템 획득 때문에/위하여 휴식하다 
-6 드루이드이/가 다음주 들판에서 동료을/를 아이템 획득 때문에/위하여 휴식하다 
-7 주술사이/가 지난주 여관에서 동료을/를 복수 때문에/위하여 치료하다 
-8 주술사이/가 다음주 던전에서 길드마스터을/를 토벌 때문에/위하여 마법공격하다 
-9 주술사이/가 얼마 후 여관에서 몬스터을/를 토벌 때문에/위하여 마법공격하다 
+……
 10 도적이/가 이번주 여관에서 병사을/를 의뢰 때문에/위하여 포획하다 
 ```
 

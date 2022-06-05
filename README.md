@@ -5,6 +5,7 @@ Rock N' Roll Baby!
 
 ## [Idea Generator](/IdeaGenerator#idea-generator)
 
+- [Idea Generator v0.21 (2022.06.05)](/IdeaGenerator#idea-generator-v021-20220605)
 - [Idea Generator v0.20 (2022.06.03)](/IdeaGenerator#idea-generator-v020-20220603)
 - [Idea Generator v0.12 (2022.05.20)](/IdeaGenerator#idea-generator-v012-20220520)
 - [Idea Generator v0.11 (2022.05.19)](/IdeaGenerator#idea-generator-v011-20220519)
