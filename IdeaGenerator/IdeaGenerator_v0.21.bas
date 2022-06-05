@@ -60,7 +60,7 @@ Private Sub GenIdea()
 
                 ' test
                 ' Cells(i + 4, j).Value = Str(pick + 2) & " " & Str(j + 7)
-            ' If intergrated, print the completed sentence only when j = 6
+            ' If intergrate, print the completed sentence only when j = 6
             Else
                 If j = 6 And integrated = 1 Then
                     Cells(i + 4, 1).Value = sentence
