@@ -3,12 +3,30 @@
 for my sister who is an aspiring writer
 
 
+### To-Do
+
+| Subject | Detail | Related Version | Completion Date |
+|:-:|:--|:-:|:-:|
+| Feature | Open **Idea Generator**(main) and **Dictionary** sheets with the `Run` button | [v0.10](#idea-generator-v010-20220518) | 2022.05.18 |
+| | Select the number of sentences generated | [v0.10](#idea-generator-v010-20220518) | 2022.05.18 |
+| | Add **postpositions** and make able to choose if use them or not | [v0.11](#idea-generator-v011-20220519) | 2022.05.19 |
+| | Add **parameters validation** (not in code, but in **Excel** sheet) | [v0.11](#idea-generator-v011-20220519) | 2022.05.19 |
+| | Print a line as an **integrated sentence** | [v0.12](#idea-generator-v012-20220520) | 2022.05.20 |
+| | Save sentences into a **log file** | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
+| | - Bug Fix : Save properly whatever the parameters are | v0.21 (Coming) | (Coming) |
+| | Use plural dictionaries | (Coming) | (Coming) |
+| | Generate a parapraph with `KoGPT2` `HyperCLOVA` and so on | (Coming) | (Coming) |
+| Design | Add title and rearrange the parameters' locations | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
+| | More design improvement | (Coming) | (Coming) |
+| Refactoring | Architecture improvement | (Coming) | (Coming) |
+
+
 ### List
 
 - [Idea Generator v0.20 (2022.06.03)](#idea-generator-v020-20220603)
 - [Idea Generator v0.12 (2022.05.20)](#idea-generator-v012-20220520)
 - [Idea Generator v0.11 (2022.05.19)](#idea-generator-v011-20220519)
-- [Idea Generator v0.1 (2022.05.18)](#idea-generator-v01-20220518)
+- [Idea Generator v0.10 (2022.05.18)](#idea-generator-v010-20220518)
 
 
 ## [Idea Generator v0.20 (2022.06.03)](#list)
@@ -177,10 +195,6 @@ Option Explicit
 
 - Add **postpositions** and make able to **choose** if use them or not
 - Add **parameters validation** (not in code, but in **Excel** sheet)
-- To-Do :  
-&nbsp;&nbsp;- Print a line as an integrated sentence (suggested from my friend *2071*) ☞ done ([v0.12](#idea-generator-v012-20220520))  
-&nbsp;&nbsp;- Save as a seperated log file  
-&nbsp;&nbsp;- Expand to generate a parapraph with `KoGPT2` `HyperCLOVA` and so on
 
 ![Idea Generator v0.11](Images/GenIdea_v0.11.PNG)  
 ![Idea Generator v0.11](Images/GenIdea_v0.11_dict.PNG)
@@ -208,14 +222,14 @@ Option Explicit
 ```
 
 
-## [Idea Generator v0.1 (2022.05.18)](#list)
+## [Idea Generator v0.10 (2022.05.18)](#list)
 
 - Initialize : open **Idea Generator**(main) and **Dictionary** sheets with the `Run` button
 - Can select the number of sentences generated
 - Test : Ok
 
-![Idea Generator v0.1](Images/GenIdea_v0.1.PNG)  
-![Idea Generator v0.1](Images/GenIdea_v0.1_dict.PNG)
+![Idea Generator v0.10](Images/GenIdea_v0.10.PNG)  
+![Idea Generator v0.10](Images/GenIdea_v0.10_dict.PNG)
 
 ```vba
 Sub GenIdea()
