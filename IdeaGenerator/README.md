@@ -14,9 +14,9 @@ for my sister who is an aspiring writer
 | | Print a line as an **integrated sentence** | [v0.12](#idea-generator-v012-20220520) | 2022.05.20 |
 | | Save sentences into a **log file** | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
 | | - Bug Fix : Save properly whatever the parameters are | v0.21 (Coming) | (Coming) |
-| | Use plural dictionaries | (Coming) | (Coming) |
-| | Generate a parapraph with `KoGPT2` `HyperCLOVA` and so on | (Coming) | (Coming) |
-| Design | Add title and rearrange the parameters' locations | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
+| | Use **plural dictionaries** | (Coming) | (Coming) |
+| | **Generate a parapraph** with `KoGPT2` `HyperCLOVA` and so on | (Coming) | (Coming) |
+| Design | Add **title** and rearrange the parameters' locations | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
 | | More design improvement | (Coming) | (Coming) |
 | Refactoring | Architecture improvement | (Coming) | (Coming) |
 
