@@ -15,25 +15,6 @@ Private Sub SetArea( _
 End Sub
 
 
-' Set Log File Path
-Private Sub GetPath( _
-    ByRef path As String, _
-    ByRef timeInfo As String _
-    )
-
-    Dim timeInfo1 As Date, _
-        timeInfo2 As Date
-
-    timeInfo1 = Date
-    timeInfo2 = Time
-    timeInfo = timeInfo1 & " " & timeInfo2
-
-    path = ThisWorkbook.path & Application.PathSeparator & _
-           "GenIdeaLog_" & timeInfo1 & ".txt"
-
-End Sub
-
-
 ' Clear Using Area
 Private Sub Clear(ByRef usingArea As Range)
 
@@ -64,6 +45,25 @@ Private Sub SetParameters( _
     Else
         usingArea.HorizontalAlignment = xlCenter                                ' center alignment when the sentence is not integrated
     End If
+
+End Sub
+
+
+' Set Log File Path
+Private Sub GetPath( _
+    ByRef path As String, _
+    ByRef timeInfo As String _
+    )
+
+    Dim timeInfo1 As Date, _
+        timeInfo2 As Date
+
+    timeInfo1 = Date
+    timeInfo2 = Time
+    timeInfo = timeInfo1 & " " & timeInfo2
+
+    path = ThisWorkbook.path & Application.PathSeparator & _
+           "GenIdeaLog_" & timeInfo1 & ".txt"
 
 End Sub
 
