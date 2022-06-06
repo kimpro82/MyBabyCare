@@ -16,10 +16,10 @@ for my sister who is an aspiring writer
 | | - Bug Fix : Save properly whatever the parameters are | [v0.21](#idea-generator-v021-20220605) | 2022.06.05 |
 | | Use **plural dictionaries** | (Coming) | (Coming) |
 | | **Generate a parapraph** with `KoGPT2` `HyperCLOVA` and so on | (Coming) | (Coming) |
-| | …… More feature improvement …… | (Coming) | (Coming) |
 | Design | Add **title** and rearrange the parameters' locations | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
 | | …… More design improvement …… | (Coming) | (Coming) |
-| Refactoring | …… More architecture improvement …… | (Coming) | (Coming) |
+| Refactoring | **Partition** `GenIdea()` Procedure | [v0.22](#idea-generator-v022-20220606) | 2022.06.06 |
+| | …… More architecture improvement …… | (Coming) | (Coming) |
 
 
 ### List
@@ -34,8 +34,9 @@ for my sister who is an aspiring writer
 
 ## [Idea Generator v0.22 (2022.06.06)](#list)
 
-- **Refactoring** : Partition `GenIdea()` Procedure
-&nbsp;&nbsp;- Change only codes except the external feature
+- **Refactoring** : Partition `GenIdea()` Procedure  
+&nbsp;&nbsp;- Change only codes except the external feature  
+&nbsp;&nbsp;- Need to consider if introduce **structure** or not
 
 #### `IdeaGenerator_v0.22.bas`
 ```vba
