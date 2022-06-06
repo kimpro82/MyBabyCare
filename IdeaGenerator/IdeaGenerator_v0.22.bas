@@ -16,13 +16,20 @@ End Sub
 
 
 ' Set Log File Path
-Private Sub GetPath(ByRef path As String, ByRef timeInfo As String)
+Private Sub GetPath( _
+    ByRef path As String, _
+    ByRef timeInfo As String _
+    )
 
-    Dim timeInfo1 As Date, timeInfo2 As Date
+    Dim timeInfo1 As Date, _
+        timeInfo2 As Date
+
     timeInfo1 = Date
     timeInfo2 = Time
     timeInfo = timeInfo1 & " " & timeInfo2
-    path = ThisWorkbook.path & Application.PathSeparator & "GenIdeaLog_" & timeInfo1 & ".txt"
+
+    path = ThisWorkbook.path & Application.PathSeparator & _
+           "GenIdeaLog_" & timeInfo1 & ".txt"
 
 End Sub
 
@@ -62,9 +69,14 @@ End Sub
 
 
 ' Get Random Number to Pick a Word
-Private Sub GetRndNum(ByRef j As Integer, ByRef pick As Integer)
+Private Sub GetRndNum( _
+    ByRef j As Integer, _
+    ByRef pick As Integer _
+    )
+
     Randomize
     pick = Int(Rnd * Sheet1.Cells(1, j)) + 1                                    ' want to find the way better than 'Sheet1' ……
+
 End Sub
 
 
@@ -79,7 +91,7 @@ Private Sub GetPhrase( _
     If postp = 1 Then
         ' Judge if insert spaces or not
         If j = 5 Then
-            phrase = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)   ' Sheet1
+            phrase = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)   ' Sheet1 / 2, 7 : depends on the dictionary sheet's structure
         Else
             phrase = Sheet1.Cells(pick + 2, j) & Sheet1.Cells(2, j + 7)         ' Sheet1
         End If
@@ -103,10 +115,10 @@ End Sub
 
 ' Print each Phrase or integrated Sentence
 Private Sub PrintSentence( _
-    ByRef printZero As Range, _
     ByRef phrase As String, _
     ByRef sentence As String, _
     ByRef integrated As Integer, _
+    ByRef printZero As Range, _
     ByRef i As Integer, _
     ByRef j As Integer, _
     ByRef pick As Integer _
@@ -116,7 +128,7 @@ Private Sub PrintSentence( _
         printZero.Offset(i - 1, j - 1).Value = phrase
 
         ' test
-        ' printZero.Offset(i - 1, j - 1).Value = Str(pick + 2) & " " & Str(j + 7)   ' 2, 7 : need more generalized ……
+        ' printZero.Offset(i - 1, j - 1).Value = Str(pick + 2) & " " & Str(j + 7)   ' 2, 7 : depends on the dictionary sheet's structure
     Else                                                                            ' if intergrate, print the completed sentence only when j = 6
         If j = 6 And integrated = 1 Then
             printZero.Offset(i - 1, 0).Value = sentence
@@ -126,7 +138,7 @@ Private Sub PrintSentence( _
 End Sub
 
 
-' Save Sentences into a Log File
+' Save a Sentences into a Log File
 Private Sub RecordLog( _
     ByRef path As String, _
     ByRef timeInfo As String, _
@@ -137,9 +149,9 @@ Private Sub RecordLog( _
     Dim fn As Integer
     fn = FreeFile
 
-    ' Record the Sentences
     Dim logSentence As String
     logSentence = i & " " & sentence
+
     Open path For Append As #fn
         If i = 1 Then                                                           ' add timeInfo when i = 1
             Print #fn, timeInfo
@@ -151,6 +163,7 @@ Private Sub RecordLog( _
 End Sub
 
 
+' Main Procedure
 Private Sub GenIdea()
 
     ' Set Area : Zero Point and whole Area
@@ -171,12 +184,15 @@ Private Sub GenIdea()
 
     ' Set Log File Path
     If save = 1 Then                                                            ' if not save, path isn't needed
-        Dim path As String, timeInfo As String
+        Dim path As String, _
+            timeInfo As String
         Call GetPath(path, timeInfo)
     End If
 
     ' Loop for i, j
-    Dim i As Integer, j As Integer, pick As Integer                             ' i is recognized as Variant/Double when Dim i, j As Integer
+    Dim i As Integer, _
+        j As Integer, _
+        pick As Integer                                                         ' i is recognized as Variant/Double when Dim i, j As Integer
     Dim sentence As String, phrase As String
 
     For i = 1 To n
@@ -197,11 +213,11 @@ Private Sub GenIdea()
             Call GetSentence(sentence, phrase)                                  ' assemble sentence whenever integrate or not
 
             ' Print each Phrase or integrated Sentence
-            Call PrintSentence(printZero, phrase, sentence, integrated, i, j, pick)
+            Call PrintSentence(phrase, sentence, integrated, printZero, i, j, pick)
 
         Next j
 
-        ' Call RecordLog() for Saving into a separated log file
+        ' Save a Sentences into a Log File
         If save = 1 Then
             Call RecordLog(path, timeInfo, i, sentence)
         End If
