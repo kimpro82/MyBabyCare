@@ -18,7 +18,7 @@ for my sister who is an aspiring writer
 | | **Generate a paragraph** with `KoGPT2` `HyperCLOVA` and so on | (Coming) | (Coming) |
 | Design | Add **title** and rearrange the parameters' locations | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
 | | …… More design improvement …… | (Coming) | (Coming) |
-| Refactoring | **Partition** `GenIdea()` Procedure | [v0.22](#idea-generator-v022-20220606) | 2022.06.06 |
+| Refactoring | **Partition** `GenIdea()` procedure | [v0.22](#idea-generator-v022-20220606) | 2022.06.06 |
 | | …… More architecture improvement …… | (Coming) | (Coming) |
 
 
