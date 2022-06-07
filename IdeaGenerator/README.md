@@ -15,7 +15,7 @@ for my sister who is an aspiring writer
 | | Save sentences into a **log file** | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
 | | - Bug Fix : Save properly whatever the parameters are | [v0.21](#idea-generator-v021-20220605) | 2022.06.05 |
 | | Use **plural dictionaries** | (Coming) | (Coming) |
-| | **Generate a parapraph** with `KoGPT2` `HyperCLOVA` and so on | (Coming) | (Coming) |
+| | **Generate a paragraph** with `KoGPT2` `HyperCLOVA` and so on | (Coming) | (Coming) |
 | Design | Add **title** and rearrange the parameters' locations | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
 | | …… More design improvement …… | (Coming) | (Coming) |
 | Refactoring | **Partition** `GenIdea()` Procedure | [v0.22](#idea-generator-v022-20220606) | 2022.06.06 |
@@ -146,8 +146,8 @@ End Sub
 ```vba
 ' Get a Sentence
 Private Sub GetSentence( _
-    ByRef sentence As String, _
-    ByRef phrase As String _
+    ByRef phrase As String, _
+    ByRef sentence As String _
     )
 
     sentence = sentence & phrase & " "
@@ -188,7 +188,7 @@ Private Sub RecordLog( _
     ByRef sentence As String _
     )
 
-    Dim fn As Integer
+    Dim fn          As Integer
     fn = FreeFile
 
     Dim logSentence As String
@@ -226,22 +226,23 @@ Private Sub GenIdea()
 
     ' Set Log File Path
     If save = 1 Then                                                            ' if not save, path isn't needed
-        Dim path As String, _
+        Dim path    As String, _
             timeInfo As String
         Call GetPath(path, timeInfo)
     End If
 
     ' Loop for i, j
-    Dim i As Integer, _
-        j As Integer, _
-        pick As Integer                                                         ' i is recognized as Variant/Double when Dim i, j As Integer
-    Dim sentence As String, phrase As String
+    Dim i           As Integer, _
+        j           As Integer, _
+        pick        As Integer                                                  ' i is recognized as Variant/Double when Dim i, j As Integer
+    Dim sentence    As String, _
+        phrase      As String
 
     For i = 1 To n
 
         sentence = ""                                                           ' initialize the sentence for each row
 
-        For j = 1 To 6                                                          ' 6 from the dictionary that consists of 5W1H
+        For j = 1 To 6                                                          ' 6 from the dictionary that consists of 5W1H (dependent)
 
             phrase = ""                                                         ' initialize the phrase for each column
 
@@ -252,7 +253,7 @@ Private Sub GenIdea()
             Call GetPhrase(phrase, postp, j, pick)
 
             ' Get a sentence
-            Call GetSentence(sentence, phrase)                                  ' assemble sentence whenever integrate or not
+            Call GetSentence(phrase, sentence)                                  ' assemble sentence whenever integrate or not
 
             ' Print each Phrase or integrated Sentence
             Call PrintSentence(phrase, sentence, integrated, printZero, i, j, pick)
