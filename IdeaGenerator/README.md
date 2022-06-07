@@ -15,10 +15,11 @@ for my sister who is an aspiring writer
 | | Save sentences into a **log file** | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
 | | - Bug Fix : Save properly whatever the parameters are | [v0.21](#idea-generator-v021-20220605) | 2022.06.05 |
 | | Use **plural dictionaries** | (Coming) | (Coming) |
-| | **Generate a paragraph** with `KoGPT2` `HyperCLOVA` and so on | (Coming) | (Coming) |
+| | **Generate a parapraph** with `KoGPT2` `HyperCLOVA` and so on | (Coming) | (Coming) |
+| | …… More feature improvement …… | (Coming) | (Coming) |
 | Design | Add **title** and rearrange the parameters' locations | [v0.20](#idea-generator-v020-20220603) | 2022.06.03 |
 | | …… More design improvement …… | (Coming) | (Coming) |
-| Refactoring | **Partition** `GenIdea()` procedure | [v0.22](#idea-generator-v022-20220606) | 2022.06.06 |
+| Refactoring | **Partition** `GenIdea()` Procedure | [v0.22](#idea-generator-v022-20220606) | 2022.06.06 |
 | | …… More architecture improvement …… | (Coming) | (Coming) |
 
 
