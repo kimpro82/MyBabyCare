@@ -35,8 +35,9 @@ for my sister who is an aspiring writer
 ## [Idea Generator v0.22 (2022.06.06)](#list)
 
 - **Refactoring** : Partition `GenIdea()` Procedure  
-&nbsp;&nbsp;- Change only codes except the external feature  
-&nbsp;&nbsp;- Need to consider if introduce **structure** or not
+&nbsp;&nbsp;- Change only codes except the external feature
+
+![Idea Generator v0.22 Architecture](Images/GenIdea_v0.22_Architecture.PNG)
 
 #### `IdeaGenerator_v0.22.bas`
 ```vba
