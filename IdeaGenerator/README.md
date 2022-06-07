@@ -44,7 +44,7 @@ for my sister who is an aspiring writer
 Option Explicit
 ```
 ```vba
-' Set Area : zero point and whole area, modify when the sheet design is changed
+' Set Area : Zero Point and Using Area's Range / ★ Modify When the Sheet Design is Changed
 Private Sub SetArea( _
     ByRef paramZero As Range, _
     ByRef printZero As Range, _
@@ -93,7 +93,7 @@ End Sub
 ```
 ```vba
 ' Set Log File Path
-Private Sub GetPath( _
+Private Sub SetPath( _
     ByRef path As String, _
     ByRef timeInfo As String _
     )
@@ -132,7 +132,7 @@ Private Sub GetPhrase( _
     )
 
     If postp = 1 Then
-        ' Judge if insert spaces or not
+        ' Judge if Insert a Space or not
         If j = 5 Then
             phrase = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)   ' Sheet1 / 2, 7 : depends on the dictionary sheet's structure
         Else
@@ -209,7 +209,7 @@ End Sub
 ' Main Procedure
 Private Sub GenIdea()
 
-    ' Set Area : Zero Point and whole Area
+    ' Set Area : Zero Point and Using Area's Range
     Dim paramZero   As Range, _
         printZero   As Range, _
         usingArea   As Range
@@ -229,7 +229,7 @@ Private Sub GenIdea()
     If save = 1 Then                                                            ' if not save, path isn't needed
         Dim path    As String, _
             timeInfo As String
-        Call GetPath(path, timeInfo)
+        Call SetPath(path, timeInfo)
     End If
 
     ' Loop for i, j
@@ -250,10 +250,10 @@ Private Sub GenIdea()
             ' Get Random Number to Pick a Word
             Call GetRndNum(j, pick)
 
-            ' Get a phrase
+            ' Get a Phrase
             Call GetPhrase(phrase, postp, j, pick)
 
-            ' Get a sentence
+            ' Get a Sentence
             Call GetSentence(phrase, sentence)                                  ' assemble sentence whenever integrate or not
 
             ' Print each Phrase or integrated Sentence
