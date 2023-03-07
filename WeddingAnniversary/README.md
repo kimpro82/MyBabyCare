@@ -119,9 +119,9 @@ You're inside me.
   ![Wedding Anniversary 7](./Images/WeddingAnniversary7.gif)
 
 - Technical improvements
-  - `html` : Relocate `script` tag (* reference ☞ [Script Tag's Location (2022.01.02)](#script-tags-location-20220102))
-  - `css` : Add `border` with rounded edge / change font from `Comic Sans MS` to `Brush Script MT`
-  - `js` : Limit letter's color range in consideration of black background (seems trivial)
+  - HTML : Relocate `script` tag (* reference ☞ [Script Tag's Location (2022.01.02)](#script-tags-location-20220102))
+  - CSS : Add `border` with rounded edge / change font from `Comic Sans MS` to `Brush Script MT`
+  - JavaScript : Limit letter's color range in consideration of black background (seems trivial)
 
 - Sources :
   [Heart](https://www.pinterest.co.kr/pin/301881981279040326/) /
