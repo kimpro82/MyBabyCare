@@ -1,1 +1,2 @@
 *.bas linguist-language=VBA
+*ts.js linguist-vendored
