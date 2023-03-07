@@ -128,7 +128,7 @@ You're inside me.
   [777](https://tenor.com/view/jackpot-slot-machine-777-lucky-gif-12992912)
 
   <details>
-    <summary>WeddingAnniversary7.html: Mainly updated part</summary>
+    <summary>WeddingAnniversary7.html : Mainly updated part</summary>
 
   ```html
   <head>
