@@ -238,8 +238,7 @@ You're inside me.
 
 ## [5th Wedding Anniversary 2 (2020.03.11)](#list)
 
-- CSS : Enhancement of `vertical-align` between text and image
-- JavaScript : No change
+- Use `vertical-align` between text and image to improve alignment in CSS
 
   ![Wedding Anniversary 5 - 2](./Images/WeddingAnniversary5_2.gif)
 
