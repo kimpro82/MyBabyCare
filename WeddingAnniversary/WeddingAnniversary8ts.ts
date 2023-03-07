@@ -1,4 +1,4 @@
-function changeColor()                                                              // "Duplicate function implementation" is not a real error in VS code
+function changeColor()                                                              // "Duplicate function implementation" is not a real error in VS code (can remove by "tsc --init")
 {
     const randNumDec: number[] = [];                                                // for containing random numbers decimally
     const randNumHex: string[] = [];                                                // for containing converted numbers hexdecimally
