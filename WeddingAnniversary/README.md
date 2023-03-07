@@ -1,6 +1,6 @@
 # [Wedding Anniversary](../README.md#wedding-anniversary)
 
-I know you are into me
+You're inside me.
 
 
 ### List
@@ -119,9 +119,9 @@ I know you are into me
   ![Wedding Anniversary 7](./Images/WeddingAnniversary7.gif)
 
 - Technical improvements
-  - `html` : relocate `script` tag (* reference ☞ [Script Tag's Location (2022.01.02)](#script-tags-location-20220102))
-  - `css` : add `border` with rounded edge / change font from `Comic Sans MS` to `Brush Script MT`
-  - `js` : limit letter's color range in consideration of black background (seems trivial)
+  - `html` : Relocate `script` tag (* reference ☞ [Script Tag's Location (2022.01.02)](#script-tags-location-20220102))
+  - `css` : Add `border` with rounded edge / change font from `Comic Sans MS` to `Brush Script MT`
+  - `js` : Limit letter's color range in consideration of black background (seems trivial)
 
 - Sources :
   [Heart](https://www.pinterest.co.kr/pin/301881981279040326/) /
@@ -178,7 +178,9 @@ I know you are into me
   ![Wedding Anniversary 6](./Images/WeddingAnniversary6.gif)
 
 - Technical improvements
+
   - CSS : Seperate id `name` to `name1` and `name2` and maintain the texts in a line
+
   - Javascript : Use `for` statement
 
   <details>
