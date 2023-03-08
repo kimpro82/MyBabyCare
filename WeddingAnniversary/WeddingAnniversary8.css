@@ -1,0 +1,53 @@
+@charset "EUC-KR";
+
+body {
+    text-align: center;
+
+    max-width: 2880;
+    max-height: 1440;
+
+    font-family: fantasy, Times, serif;
+    opacity: 0.8;
+
+    /* background-color: black; */
+    background-image: url("https://steamuserimages-a.akamaihd.net/ugc/88226491225119785/A926E8C91408FF20719AA8781EDB10ADF9BF7626/");
+    background-size : 100%;
+
+    /* border: 2px solid antiquewhite; */
+    /* border-radius: 40px; */
+}
+
+#row1_1 {
+    display: inline;
+    font-size: 700%;
+}
+
+#row1_1 img {
+    content: url("https://i.pinimg.com/originals/38/a4/69/38a469ce87cd9702d0bea43478ad4df0.gif");
+    vertical-align: -10px;
+    width: 130px;
+    height: auto;
+    opacity: 1;
+}
+
+#row1_2 {
+    display: inline;
+    font-size: 700%;
+}
+
+#row2 {
+    font-size: 600%;
+}
+
+#row2 img {
+    content: url("https://thumbs.gfycat.com/OrneryUnluckyAngwantibo-max-1mb.gif");
+    vertical-align: -35px;
+    width: 280px;
+    height: auto;
+    object-fit: none;
+    opacity: 1;
+}
+
+#row3 {
+    font-size: 600%;
+}
