@@ -87,6 +87,8 @@ canvas.addEventListener('mousedown', handleInput);
 canvas.addEventListener('touchstart', function (event) {
     event.preventDefault();
     handleInput(event);
+}, {
+    passive: true
 });
 window.addEventListener('resize', function () {
     firstRun = true;
