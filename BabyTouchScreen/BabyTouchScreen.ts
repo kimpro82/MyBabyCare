@@ -1,90 +1,107 @@
+// 2024.01.18
+
+let firstRun: boolean = true;
+
 const canvas = document.getElementById('responsiveGridCanvas') as HTMLCanvasElement;
 const ctx = canvas.getContext('2d');
 
-const cellSize = 100; // Default cell size
-const paddingPercentage = 0.1; // 10% padding on each side
-const sampleImageSrc = './Images/sample.png'; // Updated image path
+const defaultCellSize = 100;                                // Default cell size
+let actualCellSizeX: number = 100;
+let actualCellSizeY: number = 100;
+const paddingPercentage = 0.1;                              // 10% padding on each side
+const sampleImageSrc = './Images/sample.png';               // Updated image path
 
-// 파스텔 톤 색상 팔레트
-const pastelColors = ['#FFB6C1', '#FFF68F', '#98FB98'];
+const pastelColors = [                                      // Pastel tone color palette
+    '#FFB6C1', '#FFF68F', '#98FB98', '#87CEEB'
+];
+const cellColors: string[][] = [];                          // 2D array to store the color of each cell
 
-// 고정된 샘플 이미지 투명도
-const sampleImageAlpha = 0.7;
-
-// 이미지 객체
-const img = new Image();
+const img = new Image();                                    // Image object
 img.src = sampleImageSrc;
-
-// 각 셀의 색상을 저장하는 2차원 배열
-const cellColors: string[][] = [];
+const sampleImageAlpha = 0.7;                               // Fixed transparency for the sample image
 
 img.onload = function () {
     updateCanvas();
 };
 
 function updateCanvas() {
-    const numCols = Math.floor(window.innerWidth / cellSize);
-    const numRows = Math.floor(window.innerHeight / cellSize);
-    const actualCellSize = Math.min(window.innerWidth / numCols, window.innerHeight / numRows);
+    const numCols = Math.floor(window.innerWidth / defaultCellSize);
+    const numRows = Math.floor(window.innerHeight / defaultCellSize);
+    actualCellSizeX = window.innerWidth / numCols;
+    actualCellSizeY = window.innerHeight / numRows;
 
-    canvas.width = numCols * actualCellSize;
-    canvas.height = numRows * actualCellSize;
+    canvas.width = numCols * actualCellSizeX;
+    canvas.height = numRows * actualCellSizeY;
 
-    for (let x = 0; x < canvas.width; x += actualCellSize) {
+    for (let y = 0; y < numRows; y += 1) {
         const rowColors: string[] = [];
 
-        for (let y = 0; y < canvas.height; y += actualCellSize) {
-            // Calculate resized dimensions to fit the cell with padding
-            const paddingX = actualCellSize * paddingPercentage;
-            const paddingY = actualCellSize * paddingPercentage;
+        for (let x = 0; x < numCols; x += 1) {
+            // Assign color
+            if (firstRun) {
+                // Assign a random color
+                const randomColor = pastelColors[Math.floor(Math.random() * pastelColors.length)];
+                rowColors.push(randomColor);
+                ctx.fillStyle = randomColor;
+            } else {
+                ctx.fillStyle = cellColors[y][x];
+            }
+            ctx.globalAlpha = 1; // Do not apply transparency to the background color
+            ctx.fillRect(x * actualCellSizeX, y * actualCellSizeY, actualCellSizeX, actualCellSizeY);
 
-            const resizedWidth = actualCellSize - 2 * paddingX;
-            const resizedHeight = actualCellSize - 2 * paddingY;
+            // Draw the sample image in the grid (apply fixed transparency)
+            const paddingX = actualCellSizeX * paddingPercentage;
+            const paddingY = actualCellSizeY * paddingPercentage;
+
+            const resizedWidth = actualCellSizeX - 2 * paddingX;
+            const resizedHeight = actualCellSizeY - 2 * paddingY;
 
             // Draw image with padding at the center of each cell
-            const imgX = x + paddingX;
-            const imgY = y + paddingY;
-
-            // 랜덤한 색상 부여
-            const randomColor = pastelColors[Math.floor(Math.random() * pastelColors.length)];
-            rowColors.push(randomColor);
-
-            ctx.fillStyle = randomColor;
-            ctx.globalAlpha = 1; // 배경 색상에는 투명도를 적용하지 않음
-            ctx.fillRect(x, y, actualCellSize, actualCellSize);
-
-            // 샘플 이미지를 격자에 그리기 (고정된 투명도 적용)
+            const imgX = x * actualCellSizeX + paddingX;
+            const imgY = y * actualCellSizeY + paddingY;
             ctx.globalAlpha = sampleImageAlpha;
             ctx.drawImage(img, imgX, imgY, resizedWidth, resizedHeight);
         }
 
-        cellColors.push(rowColors);
+        if (firstRun) {
+            cellColors.push(rowColors);
+        }
     }
+    firstRun = false;
 }
 
 function handleInput(event: MouseEvent) {
-    const numCols = Math.floor(window.innerWidth / cellSize);
-    const actualCellSize = Math.min(window.innerWidth / numCols, window.innerHeight / numCols);
-
     const clickedX = event.clientX - canvas.getBoundingClientRect().left;
     const clickedY = event.clientY - canvas.getBoundingClientRect().top;
 
-    const colIndex = Math.floor(clickedX / actualCellSize);
-    const rowIndex = Math.floor(clickedY / actualCellSize);
+    const colIndex = Math.floor(clickedX / actualCellSizeX);
+    const rowIndex = Math.floor(clickedY / actualCellSizeY);
 
-    // 클릭할 때마다 팔레트 순서대로 변경
-    const nextColor = pastelColors[rowIndex % pastelColors.length];
+    // Change the palette order each time you click
+    const currentColorIndex = pastelColors.findIndex(color => color === cellColors[rowIndex][colIndex]);
+    const nextColorIndex = (currentColorIndex + 1) % pastelColors.length;
 
-    // 해당 셀의 색상만 변경
-    cellColors[rowIndex][colIndex] = nextColor;
+    // Only change the color of the selected cell
+    cellColors[rowIndex][colIndex] = pastelColors[nextColorIndex];
 
-    // 해당 셀만 다시 그리기
-    ctx.fillStyle = nextColor;
-    ctx.globalAlpha = 1; // 배경 색상에는 투명도를 적용하지 않음
-    ctx.fillRect(colIndex * actualCellSize, rowIndex * actualCellSize, actualCellSize, actualCellSize);
+    // Redraw only the selected cell
+    ctx.fillStyle = cellColors[rowIndex][colIndex];
+    ctx.globalAlpha = 1; // Do not apply transparency to the background color
+    ctx.fillRect(colIndex * actualCellSizeX, rowIndex * actualCellSizeY, actualCellSizeX, actualCellSizeY);
 
-    // 이미지 업데이트
+    // Update the image
     img.src = sampleImageSrc;
+
+    // Log variables for debugging
+    console.log('actualCellSizeX:', actualCellSizeX);
+    console.log('actualCellSizeY:', actualCellSizeY);
+    console.log('clickedX:', clickedX);
+    console.log('clickedY:', clickedY);
+    console.log('colIndex:', colIndex);
+    console.log('rowIndex:', rowIndex);
+    console.log('currentColorIndex:', currentColorIndex);
+    console.log('nextColorIndex:', nextColorIndex);
+    console.log('cellColors:', cellColors);
 }
 
 canvas.addEventListener('mousedown', handleInput);
@@ -93,4 +110,7 @@ canvas.addEventListener('touchstart', (event) => {
     handleInput(event);
 });
 
-window.addEventListener('resize', updateCanvas);
+window.addEventListener('resize', () => {
+    firstRun = true;
+    updateCanvas();
+});
