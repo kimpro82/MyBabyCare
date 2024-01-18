@@ -6,7 +6,7 @@ var defaultCellSize = 120; // Default cell size
 var actualCellSizeX = defaultCellSize;
 var actualCellSizeY = defaultCellSize;
 var paddingPercentage = 0.05; // 10% padding on each side
-var sampleImageSrc = './Images/son3.jpg'; // Updated image path
+var sampleImageSrc = './Images/santa.jpg'; // Updated image path
 var pastelColors = [
     '#FFB6C1', '#FFF68F', '#98FB98', '#87CEEB'
 ];
@@ -87,9 +87,7 @@ canvas.addEventListener('mousedown', handleInput);
 canvas.addEventListener('touchstart', function (event) {
     event.preventDefault();
     handleInput(event);
-}, {
-    passive: true
-});
+}, { passive: true });
 window.addEventListener('resize', function () {
     firstRun = true;
     updateCanvas();
