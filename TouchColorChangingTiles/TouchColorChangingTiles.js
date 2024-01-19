@@ -72,16 +72,16 @@ function handleInput(event) {
     ctx.fillRect(colIndex * actualCellSizeX, rowIndex * actualCellSizeY, actualCellSizeX, actualCellSizeY);
     // Update the image
     img.src = sampleImageSrc;
-    // Log variables for debugging
-    console.log('actualCellSizeX:', actualCellSizeX);
-    console.log('actualCellSizeY:', actualCellSizeY);
-    console.log('clickedX:', clickedX);
-    console.log('clickedY:', clickedY);
-    console.log('colIndex:', colIndex);
-    console.log('rowIndex:', rowIndex);
-    console.log('currentColorIndex:', currentColorIndex);
-    console.log('nextColorIndex:', nextColorIndex);
-    console.log('cellColors:', cellColors);
+    // // Log variables for debugging
+    // console.log('actualCellSizeX:', actualCellSizeX);
+    // console.log('actualCellSizeY:', actualCellSizeY);
+    // console.log('clickedX:', clickedX);
+    // console.log('clickedY:', clickedY);
+    // console.log('colIndex:', colIndex);
+    // console.log('rowIndex:', rowIndex);
+    // console.log('currentColorIndex:', currentColorIndex);
+    // console.log('nextColorIndex:', nextColorIndex);
+    // console.log('cellColors:', cellColors);
 }
 canvas.addEventListener('mousedown', handleInput);
 canvas.addEventListener('touchstart', function (event) {
