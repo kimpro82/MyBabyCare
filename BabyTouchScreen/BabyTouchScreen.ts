@@ -110,7 +110,6 @@ canvas.addEventListener('touchstart', (event) => {
     handleInput(event);
 }, { passive: true });
 
-
 window.addEventListener('resize', () => {
     firstRun = true;
     updateCanvas();
