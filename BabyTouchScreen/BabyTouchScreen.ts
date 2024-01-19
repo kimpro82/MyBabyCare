@@ -8,8 +8,8 @@ const ctx = canvas.getContext('2d');
 const defaultCellSize = 120;                                // Default cell size
 let actualCellSizeX: number = defaultCellSize;
 let actualCellSizeY: number = defaultCellSize;
-const paddingPercentage = 0.05;                              // 10% padding on each side
-const sampleImageSrc = './Images/santa.jpg';               // Updated image path
+const paddingPercentage = 0.05;                             // 5% padding on each side
+const sampleImageSrc = './Images/santa.jpg';                // Updated image path
 
 const pastelColors = [                                      // Pastel tone color palette
     '#FFB6C1', '#FFF68F', '#98FB98', '#87CEEB'
