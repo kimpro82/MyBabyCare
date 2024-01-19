@@ -1,6 +1,6 @@
 # [Touch-Color-Changing Tiles for Babies](../README.md#)
 
-But
+But the son looked for YouTube before long
 
 
 ### List
@@ -10,13 +10,19 @@ But
 
 ## [Touch-Color-Changing Tiles for Babies (2024.01.18)](#list)
 
-- 
+- Features
+  - Dynamic application of the number and size of cells
+  - Color change while traversing a pastel tone palette with touch input
+  - Apply the same `mousedown` and `touchstart` actions for smooth testing
+
+- Future Improvements
+  - Addition of more dynamic animation effects
+  - Clear conditions such as color uniformity
+  - Additional options such as the number of colors, cell size, and various photos
 
   ![BabyTouchScreen_Santa.gif](./Images/BabyTouchScreen_Santa.gif)
 
-- Sources :
-  [Child Head With Smiling Face Icon (OnlineWebFonts.COM)](https://www.onlinewebfonts.com/icon/57082)
-
+- Code
   <details>
     <summary>BabyTouchScreen.html</summary>
 
@@ -182,3 +188,6 @@ But
   });
   ```
   </details>
+
+- Sources
+  - `sample.png` : [Child Head With Smiling Face Icon (OnlineWebFonts.COM)](https://www.onlinewebfonts.com/icon/57082)
