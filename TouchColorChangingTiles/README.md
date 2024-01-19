@@ -34,8 +34,8 @@ But the son looked for YouTube before long
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="stylesheet" href="BabyTouchScreen.css">
-      <script defer src="BabyTouchScreen.js"></script>
+      <link rel="stylesheet" href="TouchColorChangingTiles.css">
+      <script defer src="TouchColorChangingTiles.js"></script>
       <title>Touch-Color-Changing Tiles for My Son</title>
   </head>
 
@@ -163,16 +163,16 @@ But the son looked for YouTube before long
       // Update the image
       img.src = sampleImageSrc;
 
-      // Log variables for debugging
-      console.log('actualCellSizeX:', actualCellSizeX);
-      console.log('actualCellSizeY:', actualCellSizeY);
-      console.log('clickedX:', clickedX);
-      console.log('clickedY:', clickedY);
-      console.log('colIndex:', colIndex);
-      console.log('rowIndex:', rowIndex);
-      console.log('currentColorIndex:', currentColorIndex);
-      console.log('nextColorIndex:', nextColorIndex);
-      console.log('cellColors:', cellColors);
+      // // Log variables for debugging
+      // console.log('actualCellSizeX:', actualCellSizeX);
+      // console.log('actualCellSizeY:', actualCellSizeY);
+      // console.log('clickedX:', clickedX);
+      // console.log('clickedY:', clickedY);
+      // console.log('colIndex:', colIndex);
+      // console.log('rowIndex:', rowIndex);
+      // console.log('currentColorIndex:', currentColorIndex);
+      // console.log('nextColorIndex:', nextColorIndex);
+      // console.log('cellColors:', cellColors);
   }
   ```
   ```ts
