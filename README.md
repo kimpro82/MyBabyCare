@@ -3,7 +3,12 @@
 Rock N' Roll Baby!
 
 
-## [Idea Generator](/IdeaGenerator)
+## [Touch-Color-Changing Tiles for Babies](/BabyTouchScreen/)
+
+- [Touch-Color-Changing Tiles for Babies (2024.01.18)](/BabyTouchScreen/README.md#touch-color-changing-tiles-for-babies-20240118)
+
+
+## [Idea Generator](/IdeaGenerator/)
 
 - [Idea Generator v0.22 (2022.06.06)](/IdeaGenerator/readme.md#idea-generator-v022-20220606)
 - [Idea Generator v0.21 (2022.06.05)](/IdeaGenerator/readme.md#idea-generator-v021-20220605)
@@ -13,7 +18,7 @@ Rock N' Roll Baby!
 - [Idea Generator v0.10 (2022.05.18)](/IdeaGenerator/readme.md#idea-generator-v010-20220518)
 
 
-## [Wedding Anniversary](/WeddingAnniversary)
+## [Wedding Anniversary](/WeddingAnniversary/)
 
 - [8th Wedding Anniversary (2023.03.07)](/WeddingAnniversary/README.md#8th-wedding-anniversary-20230307)
 - [7th Wedding Anniversary (2022.03.07)](/WeddingAnniversary/README.md#7th-wedding-anniversary-20220307)
@@ -22,6 +27,6 @@ Rock N' Roll Baby!
 - [5th Wedding Anniversary (2020.03.07)](/WeddingAnniversary/README.md#5th-wedding-anniversary-20200307)
 
 
-## [Baby Focus Book](/BabyFocusBook)
+## [Baby Focus Book](/BabyFocusBook/)
 
 - [Black & White 1 (2021.06.15)](/BabyFocusBook/README.md#black--white-1-20210615)
