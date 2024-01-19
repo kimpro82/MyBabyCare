@@ -3,9 +3,9 @@
 Rock N' Roll Baby!
 
 
-## [Touch-Color-Changing Tiles for Babies](/BabyTouchScreen/)
+## [Touch-Color-Changing Tiles for Babies](/TouchColorChangingTiles/)
 
-- [Touch-Color-Changing Tiles for Babies (2024.01.18)](/BabyTouchScreen/README.md#touch-color-changing-tiles-for-babies-20240118)
+- [Touch-Color-Changing Tiles for Babies (2024.01.18)](/TouchColorChangingTiles/README.md#touch-color-changing-tiles-for-babies-20240118)
 
 
 ## [Idea Generator](/IdeaGenerator/)

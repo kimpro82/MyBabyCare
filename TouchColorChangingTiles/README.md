@@ -20,11 +20,11 @@ But the son looked for YouTube before long
   - Clear conditions such as color uniformity
   - Additional options such as the number of colors, cell size, and various photos
 
-  ![BabyTouchScreen_Santa.gif](./Images/BabyTouchScreen_Santa.gif)
+  ![TouchColorChangingTiles_Santa.gif](./Images/TouchColorChangingTiles_Santa.gif)
 
 - Code
   <details>
-    <summary>BabyTouchScreen.html</summary>
+    <summary>TouchColorChangingTiles.html</summary>
 
   ```html
   <!DOCTYPE html>
@@ -47,7 +47,7 @@ But the son looked for YouTube before long
   ```
   </details>
   <details>
-    <summary>BabyTouchScreen.css</summary>
+    <summary>TouchColorChangingTiles.css</summary>
 
   ```css
   body, html {
@@ -65,7 +65,7 @@ But the son looked for YouTube before long
   ```
   </details>
   <details>
-    <summary>BabyTouchScreen.ts</summary>
+    <summary>TouchColorChangingTiles.ts</summary>
 
   ```ts
   let firstRun: boolean = true;
