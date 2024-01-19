@@ -1,0 +1,14 @@
+/* 2024.01.18 */
+
+body, html {
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  
+  canvas {
+    display: block;
+    margin: auto;
+  }
+  
