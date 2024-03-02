@@ -1,2 +1,5 @@
 *.bas linguist-language=VBA
-*ts.js linguist-vendored
+
+/Hosting/*.js linguist-vendored
+/TouchColorChangingTiles/*.js linguist-vendored
+/WeddingAnniversary/*ts.js linguist-vendored

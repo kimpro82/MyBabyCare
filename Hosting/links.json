@@ -1,0 +1,65 @@
+[
+    {
+      "category": "Baby",
+      "title": "Touch-Color-Changing Tiles for Babies",
+      "date": "2024.01.18",
+      "url": "../TouchColorChangingTiles/TouchColorChangingTiles.html",
+      "comment": "<img src=\"../TouchColorChangingTiles/Images/TouchColorChangingTiles_Santa.gif\" width=100%>"
+    },
+    {
+        "category": "Wife",
+        "title": "8th Wedding Anniversary",
+        "date": "2023.03.07",
+        "url": "../WeddingAnniversary/WeddingAnniversary8.html",
+        "comment": "<img src=\"../WeddingAnniversary/Images/WeddingAnniversary8.gif\" width=100%>"
+    },
+    {
+        "category": "Baby",
+        "title": "Baby Focus Book for My Son",
+        "date": "2022.06.15",
+        "url": "",
+        "comment": "- Result from Python code (not hosting)<br><br><img src=\"../BabyFocusBook/images/BW01_2.gif\" width=100%><br><br><img src=\"../BabyFocusBook/images/BW01_4.gif\" width=100%>"
+    },
+    {
+        "category": "Sister",
+        "title": "Idea Generator v0.21",
+        "date": "2022.06.05",
+        "url": "",
+        "comment": "- Result from Excel VBA (not hosting)<br><br><img src=\"../IdeaGenerator/Images/GenIdea_v0.21.PNG\" width=100%>"
+    },
+    {
+        "category": "Sister",
+        "title": "Idea Generator v0.12",
+        "date": "2022.05.20",
+        "url": "",
+        "comment": "- Result from Excel VBA (not hosting)<br><br><img src=\"../IdeaGenerator/Images/GenIdea_v0.12.PNG\" width=100%>"
+    },
+    {
+        "category": "Wife",
+        "title": "7th Wedding Anniversary",
+        "date": "2022.03.07",
+        "url": "../WeddingAnniversary/WeddingAnniversary7.html",
+        "comment": "<img src=\"../WeddingAnniversary/Images/WeddingAnniversary7.gif\" width=100%>"
+    },
+    {
+        "category": "Wife",
+        "title": "6th Wedding Anniversary",
+        "date": "2021.03.07",
+        "url": "../WeddingAnniversary/WeddingAnniversary6.html",
+        "comment": "<img src=\"../WeddingAnniversary/Images/WeddingAnniversary6.gif\" width=100%>"
+    },
+    {
+        "category": "Wife",
+        "title": "5th Wedding Anniversary 2",
+        "date": "2020.03.11",
+        "url": "../WeddingAnniversary/WeddingAnniversary5_2.html",
+        "comment": "<img src=\"../WeddingAnniversary/Images/WeddingAnniversary5_2.gif\" width=100%>"
+    },
+    {
+        "category": "Wife",
+        "title": "5th Wedding Anniversary",
+        "date": "2020.03.07",
+        "url": "../WeddingAnniversary/WeddingAnniversary5.html",
+        "comment": "<img src=\"../WeddingAnniversary/Images/WeddingAnniversary5.gif\" width=100%>"
+    }
+]
