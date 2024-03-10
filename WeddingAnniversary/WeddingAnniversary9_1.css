@@ -8,14 +8,12 @@ body {
     /* max-height: 1440; */
 
     font-family: "Comic Sans MS", Times, serif;
-    opacity: 0.8;
+    opacity: 1;
 
     background-image: url("./Images/09_PigeonHelicopter.gif");
     background-size: 100%;
     background-repeat: no-repeat;
-    opacity: 1;
     /* filter: brightness(70%); */
-    
 
     /* border: 2px solid antiquewhite; */
     /* border-radius: 40px; */
