@@ -7,13 +7,13 @@ body {
     max-width: 2880;
     /* max-height: 1440; */
 
-    font-family: "Comic Sans MS";
+    font-family: "Comic Sans MS", Times, serif;
     opacity: 0.8;
 
     background-image: url("./Images/09_PigeonHelicopter.gif");
     background-size: 100%;
     background-repeat: no-repeat;
-    opacity: 0.8;
+    opacity: 1;
     /* filter: brightness(70%); */
     
 
@@ -27,9 +27,9 @@ body {
 }
 
 #row1_1 img {
-    content: url("https://i.pinimg.com/originals/38/a4/69/38a469ce87cd9702d0bea43478ad4df0.gif");
-    vertical-align: -10px;
-    width: 130px;
+    content: url("./Images/09_Heart_Pigeon.png");
+    vertical-align: -30px;
+    width: 150px;
     height: auto;
     opacity: 1;
 }
@@ -45,8 +45,8 @@ body {
 
 #row2 img {
     content: url("./Images/09_Number_Pigeon.png");
-    vertical-align: -100px;
-    width: 240px;
+    vertical-align: -60px;
+    width: 200px;
     height: auto;
     object-fit: cover;
     opacity: 1;
