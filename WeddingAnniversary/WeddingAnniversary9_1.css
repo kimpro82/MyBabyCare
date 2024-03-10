@@ -1,0 +1,57 @@
+@charset "EUC-KR";
+
+body {
+    /* display: flex; */
+    text-align: center;
+
+    max-width: 2880;
+    /* max-height: 1440; */
+
+    font-family: "Comic Sans MS";
+    opacity: 0.8;
+
+    background-image: url("./Images/09_PigeonHelicopter.gif");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    opacity: 0.8;
+    /* filter: brightness(70%); */
+    
+
+    /* border: 2px solid antiquewhite; */
+    /* border-radius: 40px; */
+}
+
+#row1_1 {
+    display: inline;
+    font-size: 700%;
+}
+
+#row1_1 img {
+    content: url("https://i.pinimg.com/originals/38/a4/69/38a469ce87cd9702d0bea43478ad4df0.gif");
+    vertical-align: -10px;
+    width: 130px;
+    height: auto;
+    opacity: 1;
+}
+
+#row1_2 {
+    display: inline;
+    font-size: 700%;
+}
+
+#row2 {
+    font-size: 700%;
+}
+
+#row2 img {
+    content: url("./Images/09_Number.png");
+    vertical-align: -100px;
+    width: 240px;
+    height: auto;
+    object-fit: cover;
+    opacity: 1;
+}
+
+#row3 {
+    font-size: 600%;
+}
