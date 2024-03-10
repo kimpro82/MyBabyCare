@@ -1,10 +1,17 @@
 [
     {
         "category": "Wife",
-        "title": "9th Wedding Anniversary",
+        "title": "9th Wedding Anniversary (2)",
         "date": "2024.03.07",
-        "url": "../WeddingAnniversary/WeddingAnniversary9.html",
-        "comment": "<img src=\"../WeddingAnniversary/Images/WeddingAnniversary9.gif\" width=100%>"
+        "url": "../WeddingAnniversary/WeddingAnniversary9_2.html",
+        "comment": "<img src=\"../WeddingAnniversary/Images/WeddingAnniversary9_2.gif\" width=100%>"
+    },
+    {
+        "category": "Wife",
+        "title": "9th Wedding Anniversary (1)",
+        "date": "2024.03.07",
+        "url": "../WeddingAnniversary/WeddingAnniversary9_1.html",
+        "comment": "<img src=\"../WeddingAnniversary/Images/WeddingAnniversary9_1.gif\" width=100%>"
     },
     {
       "category": "Baby",
