@@ -20,6 +20,6 @@ function changeColor() {
         document.getElementById(cssIdList[i])!.style.color = color;
     }
 }
-  
+
 // call the function every 500 milliseconds
 setInterval(changeColor, 500);
