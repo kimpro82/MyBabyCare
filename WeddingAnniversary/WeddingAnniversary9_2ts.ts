@@ -21,6 +21,6 @@ function changeColor() {
     }
   }
   
-  // call the function every 500 milliseconds
-  setInterval(changeColor, 500);
+// call the function every 500 milliseconds
+setInterval(changeColor, 500);
   
