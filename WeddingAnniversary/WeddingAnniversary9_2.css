@@ -10,7 +10,7 @@ body {
     font-family: "Brush Script MT", fantasy, Times, serif;
     opacity: 0.8;
 
-    background-image: url("./Images/9_Background.png");
+    background-image: url("./Images/09_Background.png");
     background-size: 100%;
     background-repeat: no-repeat;
     opacity: 0.8;
@@ -27,7 +27,7 @@ body {
 }
 
 #row1_1 img {
-    content: url("./Images/9_Heart.png");
+    content: url("./Images/09_Heart.png");
     vertical-align: -40px;
     width: 130px;
     height: auto;
@@ -44,7 +44,7 @@ body {
 }
 
 #row2 img {
-    content: url("./Images/9_2.png");
+    content: url("./Images/09_Number_Mono.png");
     vertical-align: -100px;
     width: 240px;
     height: auto;
