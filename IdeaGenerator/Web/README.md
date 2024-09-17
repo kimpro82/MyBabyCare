@@ -24,81 +24,80 @@ A gift made for my aspiring writer sister as a reward for loyalty
   <details>
     <summary>idea_generator_1_0_beta.html</summary>
 
-```html
-<!DOCTYPE html>
+  ```html
+  <!DOCTYPE html>
 
-……
-
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
-  <title>Idea Generator</title>
-  <link rel="stylesheet" href="styles_1_0_beta.css">
-  <script defer src="idea_generator_1_0_beta.js"></script>
-</head>
-<body>
   ……
 
-  <footer>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
+    <title>Idea Generator</title>
+    <link rel="stylesheet" href="styles_1_0_beta.css">
+    <script defer src="idea_generator_1_0_beta.js"></script>
+  </head>
+  <body>
     ……
-  </footer>
-</body>
-</html>
-```
-```html
-<body>
-  <header>
-    <div class="header-center">Idea Generator v1.0 Beta</div>
-  </header>
 
-  <!-- ComboBox for selecting the number of words to generate -->
-  <div class="select-container">
-    <label for="wordCount">Select the number of words: </label>
-    <select id="wordCount">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3" selected>3</option>       <!-- Default value set to 3 -->
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-    </select>
-  </div>
+    <footer>
+      ……
+    </footer>
+  </body>
+  </html>
+  ```
+  ```html
+  <body>
+    <header>
+      <div class="header-center">Idea Generator v1.0 Beta</div>
+    </header>
 
-  <!-- Container for displaying generated idea cards -->
-  <div id="generator"></div>
-
-  <!-- Button to shuffle and generate new idea cards -->
-  <div class="button-container">
-    <button id="shuffleBtn">Shuffle</button>
-  </div>
-
-  <footer>
-    ……
-  </footer>
-</body>
-</html>
-```
-```html
-<body>
-  ……
-
-  <footer>
-    <!-- Link to GitHub profile, opens in new tab -->
-    <div class="footer-left">
-      &nbsp;&nbsp;
-      <a href="https://github.com/kimpro82/MyFamilyCare" target="_blank">
-        kimpro82
-      </a>
+    <!-- ComboBox for selecting the number of words to generate -->
+    <div class="select-container">
+      <label for="wordCount">Select the number of words: </label>
+      <select id="wordCount">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected>3</option>       <!-- Default value set to 3 -->
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
     </div>
 
-    <!-- Display the current date -->
-    <div class="footer-right">2024.09.17&nbsp;&nbsp;</div>
-  </footer>
-</body>
-</html>
-```
+    <!-- Container for displaying generated idea cards -->
+    <div id="generator"></div>
 
+    <!-- Button to shuffle and generate new idea cards -->
+    <div class="button-container">
+      <button id="shuffleBtn">Shuffle</button>
+    </div>
+
+    <footer>
+      ……
+    </footer>
+  </body>
+  </html>
+  ```
+  ```html
+  <body>
+    ……
+
+    <footer>
+      <!-- Link to GitHub profile, opens in new tab -->
+      <div class="footer-left">
+        &nbsp;&nbsp;
+        <a href="https://github.com/kimpro82/MyFamilyCare" target="_blank">
+          kimpro82
+        </a>
+      </div>
+
+      <!-- Display the current date -->
+      <div class="footer-right">2024.09.17&nbsp;&nbsp;</div>
+    </footer>
+  </body>
+  </html>
+  ```
   </details>
   <details>
     <summary>idea_generator_1_0_beta.ts</summary>
