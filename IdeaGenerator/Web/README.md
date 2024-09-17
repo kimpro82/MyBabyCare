@@ -13,7 +13,7 @@ A gift made for my aspiring writer sister as a reward for loyalty
 - Overview
   - Migration from [Idea Generator (VBA)](/IdeaGenerator/VBA/README.md) to a web-based version using *TypeScript* and vanilla *CSS*
   - After specifying a number `n` between 1 and 6 via a combobox, pressing the *shuffle* button displays `n` idea cards
-  - The word dictionary consists of 200 words focusing on everyday terms and emotions, generated with ChatGPT
+  - The word dictionary consists of 200 words focusing on everyday terms and emotions, generated with *ChatGPT*
 
   ![Idea Generator v1.0 Beta](./Images/IdeaGenerator_1_0_beta.gif)
 
