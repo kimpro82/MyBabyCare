@@ -1,5 +1,12 @@
 [
     {
+        "category": "Sister",
+        "title": "Idea Generator v1.0 Beta",
+        "date": "2024.09.17",
+        "url": "../IdeaGenerator/Web/idea_generator_1_0_beta.html",
+        "comment": "<img src=\"../IdeaGenerator/Web/Images/IdeaGenerator_1_0_beta.gif\" width=100%>"
+    },
+    {
         "category": "Wife",
         "title": "9th Wedding Anniversary (2)",
         "date": "2024.03.07",
@@ -32,14 +39,14 @@
         "title": "Idea Generator v0.21",
         "date": "2022.06.05",
         "url": "",
-        "comment": "- Result from Excel VBA (not hosting)<br><br><img src=\"../IdeaGenerator/Images/GenIdea_v0.21.PNG\" width=100%>"
+        "comment": "- Result from Excel VBA (not hosting)<br><br><img src=\"../IdeaGenerator/VBA/Images/GenIdea_v0.21.PNG\" width=100%>"
     },
     {
         "category": "Sister",
         "title": "Idea Generator v0.12",
         "date": "2022.05.20",
         "url": "",
-        "comment": "- Result from Excel VBA (not hosting)<br><br><img src=\"../IdeaGenerator/Images/GenIdea_v0.12.PNG\" width=100%>"
+        "comment": "- Result from Excel VBA (not hosting)<br><br><img src=\"../IdeaGenerator/VBA/Images/GenIdea_v0.12.PNG\" width=100%>"
     },
     {
         "category": "Wife",
