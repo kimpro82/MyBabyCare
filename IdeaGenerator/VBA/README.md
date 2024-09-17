@@ -1,4 +1,4 @@
-# [Idea Generator](/)
+# [Idea Generator (VBA)](/README.md#vba)
 
 for my sister who is an aspiring writer
 
@@ -38,7 +38,7 @@ for my sister who is an aspiring writer
 - **Refactoring** : Partition `GenIdea()` Procedure  
 &nbsp;&nbsp;- Change only codes except the external feature
 
-![Idea Generator v0.22 Architecture](Images/GenIdea_v0.22_Architecture.PNG)
+![Idea Generator v0.22 Architecture](./Images/GenIdea_v0.22_Architecture.PNG)
 
 #### `IdeaGenerator_v0.22.bas`
 ```vba
@@ -287,7 +287,7 @@ End Sub
 
 - **Bug Fix** : Save properly whatever the parameters are
 
-![Idea Generator v0.21](Images/GenIdea_v0.21.PNG)
+![Idea Generator v0.21](./Images/GenIdea_v0.21.PNG)
 
 #### `GenIdeaLog_2022-06-05.txt` - Before (EUC-KR)
 ```txt
@@ -374,7 +374,7 @@ End Sub
 &nbsp;&nbsp;- [`ByRef` vs `ByVal` (2022.06.05)](https://github.com/kimpro82/MyPractice/tree/master/VBA#byref-vs-byval-20220605)  
 &nbsp;&nbsp;- [Declare Plural Variable (2022.06.04)](https://github.com/kimpro82/MyPractice/tree/master/VBA#declare-plural-variable-20220604)
 
-![Idea Generator v0.20](Images/GenIdea_v0.20.PNG)
+![Idea Generator v0.20](./Images/GenIdea_v0.20.PNG)
 
 #### `GenIdeaLog_2022-06-04.txt` (EUC-KR)
 ```txt
@@ -453,7 +453,7 @@ End Sub
 &nbsp;&nbsp;- Change alignment automatically (left / center)  
 &nbsp;&nbsp;- Add spaces more naturally when choose to integrate
 
-![Idea Generator v0.12](Images/GenIdea_v0.12.PNG)
+![Idea Generator v0.12](./Images/GenIdea_v0.12.PNG)
 
 #### Mainly changed parts of `IdeaGenerator_v0.12.bas`
 ```vba
@@ -528,8 +528,8 @@ Option Explicit
 - Add **postpositions** and make able to **choose** if use them or not
 - Add **parameters validation** (not in code, but in **Excel** sheet)
 
-![Idea Generator v0.11](Images/GenIdea_v0.11.PNG)  
-![Idea Generator v0.11](Images/GenIdea_v0.11_dict.PNG)
+![Idea Generator v0.11](./Images/GenIdea_v0.11.PNG)  
+![Idea Generator v0.11](./Images/GenIdea_v0.11_dict.PNG)
 
 #### Mainly changed parts of `IdeaGenerator_v0.11.bas`
 ```vba
@@ -560,8 +560,8 @@ Option Explicit
 - Can select the number of sentences generated
 - Test : Ok
 
-![Idea Generator v0.10](Images/GenIdea_v0.10.PNG)  
-![Idea Generator v0.10](Images/GenIdea_v0.10_dict.PNG)
+![Idea Generator v0.10](./Images/GenIdea_v0.10.PNG)  
+![Idea Generator v0.10](./Images/GenIdea_v0.10_dict.PNG)
 
 ```vba
 Sub GenIdea()
