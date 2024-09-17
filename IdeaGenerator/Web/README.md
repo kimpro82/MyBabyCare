@@ -24,55 +24,81 @@ A gift made for my aspiring writer sister as a reward for loyalty
   <details>
     <summary>idea_generator_1_0_beta.html</summary>
 
-  ```html
-  <!DOCTYPE html>
+```html
+<!DOCTYPE html>
 
+……
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
+  <title>Idea Generator</title>
+  <link rel="stylesheet" href="styles_1_0_beta.css">
+  <script defer src="idea_generator_1_0_beta.js"></script>
+</head>
+<body>
   ……
 
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Idea Generator</title>
-    <link rel="stylesheet" href="styles_1_0_beta.css">
-    <script defer src="idea_generator_1_0_beta.js"></script>
-  </head>
-  <body>
-    <header>
-      <div class="header-center">Idea Generator v1.0 Beta</div>
-    </header>
+  <footer>
+    ……
+  </footer>
+</body>
+</html>
+```
+```html
+<body>
+  <header>
+    <div class="header-center">Idea Generator v1.0 Beta</div>
+  </header>
 
-    <!-- 콤보박스 추가 -->
-    <div class="select-container">
-      <label for="wordCount">단어 수를 선택해주세요 : </label>
-      <select id="wordCount">
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3" selected>3</option> <!-- 디폴트 값으로 3 설정 -->
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-      </select>
+  <!-- ComboBox for selecting the number of words to generate -->
+  <div class="select-container">
+    <label for="wordCount">Select the number of words: </label>
+    <select id="wordCount">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3" selected>3</option>       <!-- Default value set to 3 -->
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+  </div>
+
+  <!-- Container for displaying generated idea cards -->
+  <div id="generator"></div>
+
+  <!-- Button to shuffle and generate new idea cards -->
+  <div class="button-container">
+    <button id="shuffleBtn">Shuffle</button>
+  </div>
+
+  <footer>
+    ……
+  </footer>
+</body>
+</html>
+```
+```html
+<body>
+  ……
+
+  <footer>
+    <!-- Link to GitHub profile, opens in new tab -->
+    <div class="footer-left">
+      &nbsp;&nbsp;
+      <a href="https://github.com/kimpro82/MyFamilyCare" target="_blank">
+        kimpro82
+      </a>
     </div>
 
-    <div id="generator"></div>
-    <div id="output"></div>
-    <div class="button-container">
-      <button id="shuffleBtn">Shuffle</button>
-    </div>
+    <!-- Display the current date -->
+    <div class="footer-right">2024.09.17&nbsp;&nbsp;</div>
+  </footer>
+</body>
+</html>
+```
 
-    <footer>
-      <div class="footer-left">
-        &nbsp;&nbsp;
-        <a href="https://github.com/kimpro82/MyFamilyCare" target="_blank">
-          kimpro82
-        </a>
-      </div>
-      <div class="footer-right">2024.09.17&nbsp;&nbsp;</div>
-    </footer>
-  </body>
-  </html>
-  ```
   </details>
   <details>
     <summary>idea_generator_1_0_beta.ts</summary>
@@ -175,125 +201,132 @@ A gift made for my aspiring writer sister as a reward for loyalty
 
   ```css
   body {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f4f4f4;
-    }
+    display: flex;                        /* Flexbox layout to center content */
+    flex-direction: column;               /* Column layout for header, generator, footer */
+    justify-content: center;              /* Vertically center content */
+    align-items: center;                  /* Horizontally center content */
+    height: 100vh;                        /* Full viewport height */
+    margin: 0;                            /* Remove default margins */
+    background-color: #f4f4f4;            /* Light background color */
+  }
 
-    header {
-      width: 100%;
-      text-align: center;
-      padding: 10px 0;
-      background-color: #eaeaea;
-      border-bottom: 2px solid #ddd;
-      position: absolute;
-      top: 0;
-    }
+  header {
+    width: 100%;                          /* Full-width header */
+    text-align: center;                   /* Center the text */
+    padding: 10px 0;                      /* Padding above and below the text */
+    background-color: #eaeaea;            /* Light gray background */
+    border-bottom: 2px solid #ddd;        /* Bottom border for header */
+    position: absolute;                   /* Positioned at the top of the page */
+    top: 0;                               /* Stick to the top */
+  }
 
-    .header-center {
-      font-size: 20px;
-      font-weight: bold;
-    }
+  .header-center {
+    font-size: 20px;                      /* Header font size */
+    font-weight: bold;                    /* Bold font style */
+  }
 
-    .select-container {
-      margin: 20px 0;
-    }
+  .select-container {
+    margin: 20px 0;                       /* Vertical margin for the combobox */
+  }
 
-    footer {
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 20px;
-      background-color: #eaeaea;
-      border-top: 2px solid #ddd;
-      position: absolute;
-      bottom: 0;
-    }
+  footer {
+    width: 100%;                          /* Full-width footer */
+    display: flex;                        /* Flexbox layout for spacing content */
+    justify-content: space-between;                                 /* Space between left and right footer items */
+    padding: 10px 20px;                   /* Padding inside the footer */
+    background-color: #eaeaea;            /* Light gray background */
+    border-top: 2px solid #ddd;           /* Top border for footer */
+    position: absolute;                   /* Positioned at the bottom of the page */
+    bottom: 0;                            /* Stick to the bottom */
+  }
 
-    .footer-left {
-      text-align: left;
-      font-size: 16px;
-    }
+  .footer-left {
+    text-align: left;                     /* Left-align the text */
+    font-size: 16px;                      /* Font size */
+  }
 
-    .footer-right {
-      text-align: right;
-      font-size: 16px;
-    }
+  .footer-right {
+    text-align: right;                    /* Right-align the text */
+    font-size: 16px;                      /* Font size */
+  }
   ```
   ```css
   #generator {
-      display: grid;
-      gap: 10px;
-      text-align: center;
-      margin-top: 20px;
-    }
+    display: grid;                            /* CSS Grid layout for cards */
+    gap: 10px;                                /* Space between grid items */
+    text-align: center;                       /* Center text inside grid items */
+    margin-top: 20px;                         /* Margin at the top of the generator */
+  }
 
-    #generator.grid-1 {
-      grid-template-columns: repeat(1, 1fr);
-    }
+  /* Grid layout for 1 card */
+  #generator.grid-1 {
+    grid-template-columns: repeat(1, 1fr);    /* 1 column grid */
+  }
 
-    #generator.grid-2 {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  /* Grid layout for 2 cards */
+  #generator.grid-2 {
+    grid-template-columns: repeat(2, 1fr);    /* 2 column grid */
+  }
 
-    #generator.grid-3 {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  /* Grid layout for 3 cards */
+  #generator.grid-3 {
+    grid-template-columns: repeat(3, 1fr);    /* 3 column grid */
+  }
 
-    #generator.grid-4 {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  /* Grid layout for 4 cards (2 columns) */
+  #generator.grid-4 {
+    grid-template-columns: repeat(2, 1fr);    /* 2 column grid for 4 cards */
+  }
 
-    #generator.grid-5 {
-      grid-template-columns: 1fr 1fr 1fr; /* 첫 번째 줄에 3개 */
-    }
+  /* Grid layout for 5 cards with specific layout */
+  #generator.grid-5 {
+    grid-template-columns: 1fr 1fr 1fr;       /* First row has 3 columns */
+  }
 
-    #generator.grid-5 .card:nth-child(4),
-    #generator.grid-5 .card:nth-child(5) {
-      grid-column: span 1; /* 두 번째 줄의 2개를 중앙에 배치 */
-      justify-self: center; /* 가운데 정렬 */
-    }
+  /* Center-align the 4th and 5th cards for grid-5 layout */
+  #generator.grid-5 .card:nth-child(4),
+  #generator.grid-5 .card:nth-child(5) {
+    grid-column: span 1;                      /* Each card occupies 1 column */
+    justify-self: center;                     /* Align these cards to the center */
+  }
 
-    #generator.grid-6 {
-      grid-template-columns: repeat(3, 1fr);
-    }
+  /* Grid layout for 6 cards */
+  #generator.grid-6 {
+    grid-template-columns: repeat(3, 1fr);    /* 3 column grid for 6 cards */
+  }
   ```
   ```css
-    .card {
-      padding: 20px;
-      border: 1px solid #ddd;
-      background-color: #fff;
-      border-radius: 8px;
-      cursor: pointer;
-    }
+  .card {
+    padding: 20px;                        /* Padding inside the card */
+    border: 1px solid #ddd;               /* Light border around the card */
+    background-color: #fff;               /* White background for the card */
+    border-radius: 8px;                   /* Rounded corners */
+    cursor: pointer;                      /* Pointer cursor on hover */
+  }
 
-    #output {
-      margin-top: 20px;
-      font-weight: bold;
-      text-align: center;
-    }
+  #output {
+    margin-top: 20px;                     /* Margin above the output text */
+    font-weight: bold;                    /* Bold output text */
+    text-align: center;                   /* Center the output text */
+  }
 
-    #shuffleBtn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #4caf50;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      position: relative;
-    }
+  #shuffleBtn {
+    margin-top: 20px;                     /* Margin above the button */
+    padding: 10px 20px;                   /* Padding inside the button */
+    background-color: #4caf50;            /* Green background for the button */
+    color: #fff;                          /* White text color */
+    border: none;                         /* Remove the border */
+    border-radius: 5px;                   /* Rounded corners for the button */
+    cursor: pointer;                      /* Pointer cursor on hover */
+    position: relative;                   /* Relative positioning for potential future use */
+  }
 
-    .button-container {
-      display: flex;
-      justify-content: center;
-      width: 100%;
-      margin-top: 20px;
-    }
+  .button-container {
+    display: flex;                        /* Flexbox layout to center the button */
+    justify-content: center;              /* Horizontally center the button */
+    width: 100%;                          /* Full-width container */
+    margin-top: 20px;                     /* Margin above the button container */
+  }
   ```
   </details>
   <details>
