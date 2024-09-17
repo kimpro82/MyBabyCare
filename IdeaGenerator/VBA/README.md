@@ -36,251 +36,302 @@ for my sister who is an aspiring writer
 ## [Idea Generator v0.22 (2022.06.06)](#list)
 
 - **Refactoring** : Partition `GenIdea()` Procedure  
-&nbsp;&nbsp;- Change only codes except the external feature
+  - Change only codes except the external feature
 
-![Idea Generator v0.22 Architecture](./Images/GenIdea_v0.22_Architecture.PNG)
+  ![Idea Generator v0.22 Architecture](./Images/GenIdea_v0.22_Architecture.PNG)
 
-#### `IdeaGenerator_v0.22.bas`
-```vba
-Option Explicit
-```
-```vba
-' Set Area : Zero Point and Using Area's Range / ★ Modify When the Sheet Design is Changed
-Private Sub SetArea( _
-    ByRef paramZero As Range, _
-    ByRef printZero As Range, _
-    ByRef usingArea As Range _
-    )
+- Code : `IdeaGenerator_v0.22.bas`
+  <details>
+    <summary>Header</summary>
 
-    Set paramZero = Range("A3")
-    Set printZero = Range("A5")
-    Set usingArea = Range(printZero, printZero.Offset(10000, 5))
+  ```vba
+  Option Explicit
+  ```
+  </details>
+  <details>
+    <summary>Private Sub SetArea()</summary>
 
-End Sub
-```
-```vba
-' Clear Using Area
-Private Sub Clear(ByRef usingArea As Range)
+  ```vba
+  ' Set Area : Zero Point and Using Area's Range / ★ Modify When the Sheet Design is Changed
+  Private Sub SetArea( _
+      ByRef paramZero As Range, _
+      ByRef printZero As Range, _
+      ByRef usingArea As Range _
+      )
 
-    usingArea.ClearContents
+      Set paramZero = Range("A3")
+      Set printZero = Range("A5")
+      Set usingArea = Range(printZero, printZero.Offset(10000, 5))
 
-End Sub
-```
-```vba
-' Set Parameters
-Private Sub SetParameters( _
-    ByRef paramZero As Range, _
-    ByRef n As Integer, _
-    ByRef postp As Integer, _
-    ByRef integrated As Integer, _
-    ByRef save As Integer, _
-    ByRef usingArea As Range _
-    )
+  End Sub
+  ```
+  </details>
 
-    n = paramZero.Value
-    postp = paramZero.Offset(0, 1).Value
-    integrated = paramZero.Offset(0, 2).Value
-    save = paramZero.Offset(0, 3).Value
+  <details>
+    <summary>Private Sub Clear()</summary>
 
-    If integrated = 1 Then
-        paramZero.Offset(0, 1).Value = 1                                        ' an integrated sentence should contain postpositions
-        postp = paramZero.Offset(0, 1).Value
-        usingArea.HorizontalAlignment = xlLeft                                  ' left alignment when the sentence is integrated
-    Else
-        usingArea.HorizontalAlignment = xlCenter                                ' center alignment when the sentence is not integrated
-    End If
+  ```vba
+  ' Clear Using Area
+  Private Sub Clear(ByRef usingArea As Range)
 
-End Sub
-```
-```vba
-' Set Log File Path
-Private Sub SetPath( _
-    ByRef path As String, _
-    ByRef timeInfo As String _
-    )
+      usingArea.ClearContents
 
-    Dim timeInfo1 As Date, _
-        timeInfo2 As Date
+  End Sub
+  ```
+  </details>
+  <details>
+    <summary>Private Sub SetParameters()</summary>
 
-    timeInfo1 = Date
-    timeInfo2 = Time
-    timeInfo = timeInfo1 & " " & timeInfo2
+  ```vba
+  ' Set Parameters
+  Private Sub SetParameters( _
+      ByRef paramZero As Range, _
+      ByRef n As Integer, _
+      ByRef postp As Integer, _
+      ByRef integrated As Integer, _
+      ByRef save As Integer, _
+      ByRef usingArea As Range _
+      )
 
-    path = ThisWorkbook.path & Application.PathSeparator & _
-           "GenIdeaLog_" & timeInfo1 & ".txt"
+      n = paramZero.Value
+      postp = paramZero.Offset(0, 1).Value
+      integrated = paramZero.Offset(0, 2).Value
+      save = paramZero.Offset(0, 3).Value
 
-End Sub
-```
-```vba
-' Get Random Number to Pick a Word
-Private Sub GetRndNum( _
-    ByRef j As Integer, _
-    ByRef pick As Integer _
-    )
+      If integrated = 1 Then
+          paramZero.Offset(0, 1).Value = 1                                        ' an integrated sentence should contain postpositions
+          postp = paramZero.Offset(0, 1).Value
+          usingArea.HorizontalAlignment = xlLeft                                  ' left alignment when the sentence is integrated
+      Else
+          usingArea.HorizontalAlignment = xlCenter                                ' center alignment when the sentence is not integrated
+      End If
 
-    Randomize
-    pick = Int(Rnd * Sheet1.Cells(1, j)) + 1                                    ' want to find the way better than 'Sheet1' ……
+  End Sub
+  ```
+  </details>
+  <details>
+    <summary>Private Sub SetPath()</summary>
 
-End Sub
-```
-```vba
-' Get a Phrase
-Private Sub GetPhrase( _
-    ByRef phrase As String, _
-    ByRef postp As Integer, _
-    ByRef j As Integer, _
-    ByRef pick As Integer _
-    )
+  ```vba
+  ' Set Log File Path
+  Private Sub SetPath( _
+      ByRef path As String, _
+      ByRef timeInfo As String _
+      )
 
-    If postp = 1 Then
-        ' Judge if Insert a Space or not
-        If j = 5 Then
-            phrase = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)   ' Sheet1 / 2, 7 : depends on the dictionary sheet's structure
-        Else
-            phrase = Sheet1.Cells(pick + 2, j) & Sheet1.Cells(2, j + 7)         ' Sheet1
-        End If
-    Else
-        phrase = Sheet1.Cells(pick + 2, j)                                      ' Sheet1
-    End If
+      Dim timeInfo1 As Date, _
+          timeInfo2 As Date
 
-End Sub
-```
-```vba
-' Get a Sentence
-Private Sub GetSentence( _
-    ByRef phrase As String, _
-    ByRef sentence As String _
-    )
+      timeInfo1 = Date
+      timeInfo2 = Time
+      timeInfo = timeInfo1 & " " & timeInfo2
 
-    sentence = sentence & phrase & " "
+      path = ThisWorkbook.path & Application.PathSeparator & _
+            "GenIdeaLog_" & timeInfo1 & ".txt"
 
-End Sub
-```
-```vba
-' Print each Phrase or integrated Sentence
-Private Sub PrintSentence( _
-    ByRef phrase As String, _
-    ByRef sentence As String, _
-    ByRef integrated As Integer, _
-    ByRef printZero As Range, _
-    ByRef i As Integer, _
-    ByRef j As Integer, _
-    ByRef pick As Integer _
-    )
+  End Sub
+  ```
+  </details>
+  <details>
+    <summary>Private Sub GetRndNum()</summary>
 
-    If integrated = 0 Then                                                          ' if not integrate, print phrase on each cell
-        printZero.Offset(i - 1, j - 1).Value = phrase
+  ```vba
+  ' Get Random Number to Pick a Word
+  Private Sub GetRndNum( _
+      ByRef j As Integer, _
+      ByRef pick As Integer _
+      )
 
-        ' test
-        ' printZero.Offset(i - 1, j - 1).Value = Str(pick + 2) & " " & Str(j + 7)   ' 2, 7 : depends on the dictionary sheet's structure
-    Else                                                                            ' if intergrate, print the completed sentence only when j = 6
-        If j = 6 And integrated = 1 Then
-            printZero.Offset(i - 1, 0).Value = sentence
-        End If
-    End If
+      Randomize
+      pick = Int(Rnd * Sheet1.Cells(1, j)) + 1                                    ' want to find the way better than 'Sheet1' ……
 
-End Sub
-```
-```vba
-' Save a Sentences into a Log File
-Private Sub RecordLog( _
-    ByRef path As String, _
-    ByRef timeInfo As String, _
-    ByRef i As Integer, _
-    ByRef sentence As String _
-    )
+  End Sub
+  ```
+  </details>
+  <details>
+    <summary>Private Sub GetPhrase()</summary>
 
-    Dim fn          As Integer
-    fn = FreeFile
+  ```vba
+  ' Get a Phrase
+  Private Sub GetPhrase( _
+      ByRef phrase As String, _
+      ByRef postp As Integer, _
+      ByRef j As Integer, _
+      ByRef pick As Integer _
+      )
 
-    Dim logSentence As String
-    logSentence = i & " " & sentence
+      If postp = 1 Then
+          ' Judge if Insert a Space or not
+          If j = 5 Then
+              phrase = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)   ' Sheet1 / 2, 7 : depends on the dictionary sheet's structure
+          Else
+              phrase = Sheet1.Cells(pick + 2, j) & Sheet1.Cells(2, j + 7)         ' Sheet1
+          End If
+      Else
+          phrase = Sheet1.Cells(pick + 2, j)                                      ' Sheet1
+      End If
 
-    Open path For Append As #fn
-        If i = 1 Then                                                           ' add timeInfo when i = 1
-            Print #fn, timeInfo
-        End If
+  End Sub
+  ```
+  </details>
 
-        Print #fn, logSentence
-    Close #fn
+  <details>
+    <summary>Private Sub GetSentence()</summary>
 
-End Sub
-```
-```vba
-' Main Procedure
-Private Sub GenIdea()
+  ```vba
+  ' Get a Sentence
+  Private Sub GetSentence( _
+      ByRef phrase As String, _
+      ByRef sentence As String _
+      )
 
-    ' Set Area : Zero Point and Using Area's Range
-    Dim paramZero   As Range, _
-        printZero   As Range, _
-        usingArea   As Range
-    Call SetArea(paramZero, printZero, usingArea)
+      sentence = sentence & phrase & " "
 
-    ' Clear Using Area
-    Call Clear(usingArea)
+  End Sub
+  ```
+  </details>
+  <details>
+    <summary>Private Sub PrintSentence()</summary>
 
-    ' Set Parameters
-    Dim n           As Integer, _
-        postp       As Integer, _
-        integrated  As Integer, _
-        save        As Integer
-    Call SetParameters(paramZero, n, postp, integrated, save, usingArea)
+  ```vba
+  ' Print each Phrase or integrated Sentence
+  Private Sub PrintSentence( _
+      ByRef phrase As String, _
+      ByRef sentence As String, _
+      ByRef integrated As Integer, _
+      ByRef printZero As Range, _
+      ByRef i As Integer, _
+      ByRef j As Integer, _
+      ByRef pick As Integer _
+      )
 
-    ' Set Log File Path
-    If save = 1 Then                                                            ' if not save, path isn't needed
-        Dim path    As String, _
-            timeInfo As String
-        Call SetPath(path, timeInfo)
-    End If
+      If integrated = 0 Then                                                          ' if not integrate, print phrase on each cell
+          printZero.Offset(i - 1, j - 1).Value = phrase
 
-    ' Loop for i, j
-    Dim i           As Integer, _
-        j           As Integer, _
-        pick        As Integer                                                  ' i is recognized as Variant/Double when Dim i, j As Integer
-    Dim sentence    As String, _
-        phrase      As String
+          ' test
+          ' printZero.Offset(i - 1, j - 1).Value = Str(pick + 2) & " " & Str(j + 7)   ' 2, 7 : depends on the dictionary sheet's structure
+      Else                                                                            ' if intergrate, print the completed sentence only when j = 6
+          If j = 6 And integrated = 1 Then
+              printZero.Offset(i - 1, 0).Value = sentence
+          End If
+      End If
 
-    For i = 1 To n
+  End Sub
+  ```
+  </details>
 
-        sentence = ""                                                           ' initialize the sentence for each row
+  <details>
+    <summary>Private Sub RecordLog()</summary>
 
-        For j = 1 To 6                                                          ' 6 from the dictionary that consists of 5W1H (dependent)
+  ```vba
+  ' Save a Sentences into a Log File
+  Private Sub RecordLog( _
+      ByRef path As String, _
+      ByRef timeInfo As String, _
+      ByRef i As Integer, _
+      ByRef sentence As String _
+      )
 
-            phrase = ""                                                         ' initialize the phrase for each column
+      Dim fn          As Integer
+      fn = FreeFile
 
-            ' Get Random Number to Pick a Word
-            Call GetRndNum(j, pick)
+      Dim logSentence As String
+      logSentence = i & " " & sentence
 
-            ' Get a Phrase
-            Call GetPhrase(phrase, postp, j, pick)
+      Open path For Append As #fn
+          If i = 1 Then                                                           ' add timeInfo when i = 1
+              Print #fn, timeInfo
+          End If
 
-            ' Get a Sentence
-            Call GetSentence(phrase, sentence)                                  ' assemble sentence whenever integrate or not
+          Print #fn, logSentence
+      Close #fn
 
-            ' Print each Phrase or integrated Sentence
-            Call PrintSentence(phrase, sentence, integrated, printZero, i, j, pick)
+  End Sub
+  ```
+  </details>
+  <details>
+    <summary>Private Sub GenIdea()</summary>
 
-        Next j
+  ```vba
+  ' Main Procedure
+  Private Sub GenIdea()
 
-        ' Save a Sentences into a Log File
-        If save = 1 Then
-            Call RecordLog(path, timeInfo, i, sentence)
-        End If
+      ' Set Area : Zero Point and Using Area's Range
+      Dim paramZero   As Range, _
+          printZero   As Range, _
+          usingArea   As Range
+      Call SetArea(paramZero, printZero, usingArea)
 
-    Next i
+      ' Clear Using Area
+      Call Clear(usingArea)
 
-End Sub
-```
-```vba
-' Run button to call GenIdea()
-Private Sub btnRun_Click()
+      ' Set Parameters
+      Dim n           As Integer, _
+          postp       As Integer, _
+          integrated  As Integer, _
+          save        As Integer
+      Call SetParameters(paramZero, n, postp, integrated, save, usingArea)
 
-    Application.Calculation = xlManual
-        Call GenIdea
-    Application.Calculation = xlAutomatic
+      ' Set Log File Path
+      If save = 1 Then                                                            ' if not save, path isn't needed
+          Dim path    As String, _
+              timeInfo As String
+          Call SetPath(path, timeInfo)
+      End If
 
-End Sub
-```
+      ' Loop for i, j
+      Dim i           As Integer, _
+          j           As Integer, _
+          pick        As Integer                                                  ' i is recognized as Variant/Double when Dim i, j As Integer
+      Dim sentence    As String, _
+          phrase      As String
+
+      For i = 1 To n
+
+          sentence = ""                                                           ' initialize the sentence for each row
+
+          For j = 1 To 6                                                          ' 6 from the dictionary that consists of 5W1H (dependent)
+
+              phrase = ""                                                         ' initialize the phrase for each column
+
+              ' Get Random Number to Pick a Word
+              Call GetRndNum(j, pick)
+
+              ' Get a Phrase
+              Call GetPhrase(phrase, postp, j, pick)
+
+              ' Get a Sentence
+              Call GetSentence(phrase, sentence)                                  ' assemble sentence whenever integrate or not
+
+              ' Print each Phrase or integrated Sentence
+              Call PrintSentence(phrase, sentence, integrated, printZero, i, j, pick)
+
+          Next j
+
+          ' Save a Sentences into a Log File
+          If save = 1 Then
+              Call RecordLog(path, timeInfo, i, sentence)
+          End If
+
+      Next i
+
+  End Sub
+  ```
+  </details>
+  <details>
+    <summary>Private Sub btnRun_Click()</summary>
+
+  ```vba
+  ' Run button to call GenIdea()
+  Private Sub btnRun_Click()
+
+      Application.Calculation = xlManual
+          Call GenIdea
+      Application.Calculation = xlAutomatic
+
+  End Sub
+  ```
+  </details>
 
 
 ## [Idea Generator v0.21 (2022.06.05)](#list)
