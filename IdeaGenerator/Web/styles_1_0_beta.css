@@ -1,0 +1,131 @@
+/* 
+  Idea Generator v1.0 Beta
+  author : kimpro82
+  date   : 2024.09.17
+*/
+
+body {
+  display: flex;                        /* Flexbox layout to center content */
+  flex-direction: column;               /* Column layout for header, generator, footer */
+  justify-content: center;              /* Vertically center content */
+  align-items: center;                  /* Horizontally center content */
+  height: 100vh;                        /* Full viewport height */
+  margin: 0;                            /* Remove default margins */
+  background-color: #f4f4f4;            /* Light background color */
+}
+
+header {
+  width: 100%;                          /* Full-width header */
+  text-align: center;                   /* Center the text */
+  padding: 10px 0;                      /* Padding above and below the text */
+  background-color: #eaeaea;            /* Light gray background */
+  border-bottom: 2px solid #ddd;        /* Bottom border for header */
+  position: absolute;                   /* Positioned at the top of the page */
+  top: 0;                               /* Stick to the top */
+}
+
+.header-center {
+  font-size: 20px;                      /* Header font size */
+  font-weight: bold;                    /* Bold font style */
+}
+
+.select-container {
+  margin: 20px 0;                       /* Vertical margin for the combobox */
+}
+
+footer {
+  width: 100%;                          /* Full-width footer */
+  display: flex;                        /* Flexbox layout for spacing content */
+  justify-content: space-between;                                 /* Space between left and right footer items */
+  padding: 10px 20px;                   /* Padding inside the footer */
+  background-color: #eaeaea;            /* Light gray background */
+  border-top: 2px solid #ddd;           /* Top border for footer */
+  position: absolute;                   /* Positioned at the bottom of the page */
+  bottom: 0;                            /* Stick to the bottom */
+}
+
+.footer-left {
+  text-align: left;                     /* Left-align the text */
+  font-size: 16px;                      /* Font size */
+}
+
+.footer-right {
+  text-align: right;                    /* Right-align the text */
+  font-size: 16px;                      /* Font size */
+}
+
+#generator {
+  display: grid;                            /* CSS Grid layout for cards */
+  gap: 10px;                                /* Space between grid items */
+  text-align: center;                       /* Center text inside grid items */
+  margin-top: 20px;                         /* Margin at the top of the generator */
+}
+
+/* Grid layout for 1 card */
+#generator.grid-1 {
+  grid-template-columns: repeat(1, 1fr);    /* 1 column grid */
+}
+
+/* Grid layout for 2 cards */
+#generator.grid-2 {
+  grid-template-columns: repeat(2, 1fr);    /* 2 column grid */
+}
+
+/* Grid layout for 3 cards */
+#generator.grid-3 {
+  grid-template-columns: repeat(3, 1fr);    /* 3 column grid */
+}
+
+/* Grid layout for 4 cards (2 columns) */
+#generator.grid-4 {
+  grid-template-columns: repeat(2, 1fr);    /* 2 column grid for 4 cards */
+}
+
+/* Grid layout for 5 cards with specific layout */
+#generator.grid-5 {
+  grid-template-columns: 1fr 1fr 1fr;       /* First row has 3 columns */
+}
+
+/* Center-align the 4th and 5th cards for grid-5 layout */
+#generator.grid-5 .card:nth-child(4),
+#generator.grid-5 .card:nth-child(5) {
+  grid-column: span 1;                      /* Each card occupies 1 column */
+  justify-self: center;                     /* Align these cards to the center */
+}
+
+/* Grid layout for 6 cards */
+#generator.grid-6 {
+  grid-template-columns: repeat(3, 1fr);    /* 3 column grid for 6 cards */
+}
+
+.card {
+  padding: 20px;                        /* Padding inside the card */
+  border: 1px solid #ddd;               /* Light border around the card */
+  background-color: #fff;               /* White background for the card */
+  border-radius: 8px;                   /* Rounded corners */
+  cursor: pointer;                      /* Pointer cursor on hover */
+}
+
+#output {
+  margin-top: 20px;                     /* Margin above the output text */
+  font-weight: bold;                    /* Bold output text */
+  text-align: center;                   /* Center the output text */
+}
+
+#shuffleBtn {
+  margin-top: 20px;                     /* Margin above the button */
+  padding: 10px 20px;                   /* Padding inside the button */
+  background-color: #4caf50;            /* Green background for the button */
+  color: #fff;                          /* White text color */
+  border: none;                         /* Remove the border */
+  border-radius: 5px;                   /* Rounded corners for the button */
+  cursor: pointer;                      /* Pointer cursor on hover */
+  position: relative;                   /* Relative positioning for potential future use */
+}
+
+.button-container {
+  display: flex;                        /* Flexbox layout to center the button */
+  justify-content: center;              /* Horizontally center the button */
+  width: 100%;                          /* Full-width container */
+  margin-top: 20px;                     /* Margin above the button container */
+}
