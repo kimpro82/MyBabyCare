@@ -338,83 +338,93 @@ for my sister who is an aspiring writer
 
 - **Bug Fix** : Save properly whatever the parameters are
 
-![Idea Generator v0.21](./Images/GenIdea_v0.21.PNG)
+  ![Idea Generator v0.21](./Images/GenIdea_v0.21.PNG)
 
-#### `GenIdeaLog_2022-06-05.txt` - Before (EUC-KR)
-```txt
-2022-06-05 오후 9:56:30
-1 
-2 
-……
-10 
-```
+- Code : `IdeaGenerator_v0.21.bas`
+  <details>
+    <summary>Mainly changed parts</summary>
 
-#### `GenIdeaLog_2022-06-05.txt` - After (EUC-KR)
-```txt
-2022-06-05 오후 11:30:44
-1 오크 이번주 던전 길드마스터 복수 기습 
-2 엘프 이번주 도구점 국왕 레벨업 휴식 
-……
-10 엘프 이번주 바다 몬스터 아이템 획득 포획 
-```
+  ```vba
+  Private Sub GenIdea()
 
-#### Mainly changed parts of `IdeaGenerator_v0.21.bas`
-```vba
-Private Sub GenIdea()
+      ……
 
-    ……
+      ' Loop for i, j
+      ……
+      Dim sentence As String, phrase As String
 
-    ' Loop for i, j
-    ……
-    Dim sentence As String, phrase As String
+      For i = 1 To n
 
-    For i = 1 To n
+          sentence = ""                                                       ' initialize the sentence for each row
 
-        sentence = ""                                                       ' initialize the sentence for each row
+          For j = 1 To 6
 
-        For j = 1 To 6
+              phrase = ""                                                     ' initialize the phrase for each column
 
-            phrase = ""                                                     ' initialize the phrase for each column
+              ……
 
-            ……
+              ' Get a phrase
+              If postp = 1 Then
+                  ' Judge if insert spaces or not
+                  If j = 5 Then
+                      phrase = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)
+                  Else
+                      phrase = Sheet1.Cells(pick + 2, j) & Sheet1.Cells(2, j + 7)
+                  End If
+              Else
+                  phrase = Sheet1.Cells(pick + 2, j)
+              End If
 
-            ' Get a phrase
-            If postp = 1 Then
-                ' Judge if insert spaces or not
-                If j = 5 Then
-                    phrase = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)
-                Else
-                    phrase = Sheet1.Cells(pick + 2, j) & Sheet1.Cells(2, j + 7)
-                End If
-            Else
-                phrase = Sheet1.Cells(pick + 2, j)
-            End If
+              ' Assemble sentence whenever integrate or not
+              sentence = sentence & phrase & " "
 
-            ' Assemble sentence whenever integrate or not
-            sentence = sentence & phrase & " "
+              ' Print each phrase or integrated sentence
+              ' If not integrate, print phrase on each cell
+              If integrated = 0 Then
+                  Cells(i + 4, j).Value = phrase
 
-            ' Print each phrase or integrated sentence
-            ' If not integrate, print phrase on each cell
-            If integrated = 0 Then
-                Cells(i + 4, j).Value = phrase
+                  ' test
+                  ' Cells(i + 4, j).Value = Str(pick + 2) & " " & Str(j + 7)
+              ' If intergrate, print the completed sentence only when j = 6
+              Else
+                  If j = 6 And integrated = 1 Then
+                      Cells(i + 4, 1).Value = sentence
+                  End If
+              End If
 
-                ' test
-                ' Cells(i + 4, j).Value = Str(pick + 2) & " " & Str(j + 7)
-            ' If intergrate, print the completed sentence only when j = 6
-            Else
-                If j = 6 And integrated = 1 Then
-                    Cells(i + 4, 1).Value = sentence
-                End If
-            End If
+          Next j
 
-        Next j
+          ……
 
-        ……
+      Next i
 
-    Next i
+  End Sub
+  ```
+  </details>
 
-End Sub
-```
+- Output : `GenIdeaLog_2022-06-05.txt`
+  <details>
+    <summary>Before (EUC-KR)</summary>
+
+  ```txt
+  2022-06-05 오후 9:56:30
+  1 
+  2 
+  ……
+  10 
+  ```
+  </details>
+  <details>
+    <summary>After (EUC-KR)</summary>
+
+  ```txt
+  2022-06-05 오후 11:30:44
+  1 오크 이번주 던전 길드마스터 복수 기습 
+  2 엘프 이번주 도구점 국왕 레벨업 휴식 
+  ……
+  10 엘프 이번주 바다 몬스터 아이템 획득 포획 
+  ```
+  </details>
 
 
 ## [Idea Generator v0.20 (2022.06.03)](#list)
