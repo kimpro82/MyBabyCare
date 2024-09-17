@@ -435,75 +435,82 @@ for my sister who is an aspiring writer
 &nbsp;&nbsp;- [`ByRef` vs `ByVal` (2022.06.05)](https://github.com/kimpro82/MyPractice/tree/master/VBA#byref-vs-byval-20220605)  
 &nbsp;&nbsp;- [Declare Plural Variable (2022.06.04)](https://github.com/kimpro82/MyPractice/tree/master/VBA#declare-plural-variable-20220604)
 
-![Idea Generator v0.20](./Images/GenIdea_v0.20.PNG)
+  ![Idea Generator v0.20](./Images/GenIdea_v0.20.PNG)
 
-#### `GenIdeaLog_2022-06-04.txt` (EUC-KR)
-```txt
-2022-06-04 오후 11:39:05
-1 오크이/가 이번주 도구점에서 병사을/를 아이템 획득 때문에/위하여 마법공격하다 
-2 드루이드이/가 지난주 대장간에서 몬스터을/를 토벌 때문에/위하여 치료하다 
-……
-10 도적이/가 이번주 여관에서 병사을/를 의뢰 때문에/위하여 포획하다 
-```
+- Code : `IdeaGenerator_v0.20.bas`
+  <details>
+    <summary>Mainly changed parts</summary>
 
-#### Mainly changed parts of `IdeaGenerator_v0.20.bas`
-```vba
-Private Sub GenIdea()
+  ```vba
+  Private Sub GenIdea()
 
-    ……
+      ……
 
-    ' Parameters
-    Dim n As Integer, postp As Integer, integrated As Integer, pick As Integer, save As Integer
+      ' Parameters
+      Dim n As Integer, postp As Integer, integrated As Integer, pick As Integer, save As Integer
 
-    ……
-    save = Range("D3")
+      ……
+      save = Range("D3")
 
-    ……
+      ……
 
-    ' Loop for i, j
-    Dim i As Integer, j As Integer                                          ' i is recognized as Variant/Double when Dim i, j As Integer
-    Dim sentence As String
+      ' Loop for i, j
+      Dim i As Integer, j As Integer                                          ' i is recognized as Variant/Double when Dim i, j As Integer
+      Dim sentence As String
 
-    For i = 1 To n
+      For i = 1 To n
 
-        ……
+          ……
 
-        ' Call RecordLog() for Saving into a separated log file
-        If save = 1 Then
-            Call RecordLog(i, sentence)
-        End If
+          ' Call RecordLog() for Saving into a separated log file
+          If save = 1 Then
+              Call RecordLog(i, sentence)
+          End If
 
-    Next i
+      Next i
 
-End Sub
-```
-```vba
-' Save sentences into a log file
-Private Sub RecordLog(ByRef i As Integer, ByRef sentence As String)
+  End Sub
+  ```
+  ```vba
+  ' Save sentences into a log file
+  Private Sub RecordLog(ByRef i As Integer, ByRef sentence As String)
 
-    ' Set log file name
-    Dim path As String, timeInfo As String, logSentence As String
-    Dim timeInfo1 As Date, timeInfo2 As Date
-    timeInfo1 = Date
-    timeInfo2 = Time
-    timeInfo = timeInfo1 & " " & timeInfo2
-    path = ThisWorkbook.path & Application.PathSeparator & "GenIdeaLog_" & timeInfo1 & ".txt"
+      ' Set log file name
+      Dim path As String, timeInfo As String, logSentence As String
+      Dim timeInfo1 As Date, timeInfo2 As Date
+      timeInfo1 = Date
+      timeInfo2 = Time
+      timeInfo = timeInfo1 & " " & timeInfo2
+      path = ThisWorkbook.path & Application.PathSeparator & "GenIdeaLog_" & timeInfo1 & ".txt"
 
-    Dim fn As Integer
-    fn = FreeFile
+      Dim fn As Integer
+      fn = FreeFile
 
-    ' Record the sentences
-    logSentence = i & " " & sentence
-    Open path For Append As #fn
-        If i = 1 Then                                                       ' when the log file should be initialized
-            Print #fn, timeInfo
-        End If
-        
-        Print #fn, logSentence
-    Close #fn
+      ' Record the sentences
+      logSentence = i & " " & sentence
+      Open path For Append As #fn
+          If i = 1 Then                                                       ' when the log file should be initialized
+              Print #fn, timeInfo
+          End If
+          
+          Print #fn, logSentence
+      Close #fn
 
-End Sub
-```
+  End Sub
+  ```
+  </details>
+- Output : `GenIdeaLog_2022-06-04.txt`
+  <details>
+    <summary>(EUC-KR)</summary>
+
+  ```txt
+  2022-06-04 오후 11:39:05
+  1 오크이/가 이번주 도구점에서 병사을/를 아이템 획득 때문에/위하여 마법공격하다 
+  2 드루이드이/가 지난주 대장간에서 몬스터을/를 토벌 때문에/위하여 치료하다 
+  ……
+  10 도적이/가 이번주 여관에서 병사을/를 의뢰 때문에/위하여 포획하다 
+  ```
+  </details>
 
 
 ## [Idea Generator v0.12 (2022.05.20)](#list)
