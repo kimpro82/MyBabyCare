@@ -600,30 +600,34 @@ for my sister who is an aspiring writer
 - Add **postpositions** and make able to **choose** if use them or not
 - Add **parameters validation** (not in code, but in **Excel** sheet)
 
-![Idea Generator v0.11](./Images/GenIdea_v0.11.PNG)  
-![Idea Generator v0.11](./Images/GenIdea_v0.11_dict.PNG)
+  ![Idea Generator v0.11](./Images/GenIdea_v0.11.PNG)  
+  ![Idea Generator v0.11](./Images/GenIdea_v0.11_dict.PNG)
 
-#### Mainly changed parts of `IdeaGenerator_v0.11.bas`
-```vba
-'Option Explicit                                                            ' Cause an error : i, j are not declared strictly
-```
-```vba
-    ……
-    Dim n, postp, pick As Integer
-    ……
-    postp = Range("B2")
-    ……
-```
-```vba
-            ……
-            If postp = 1 Then
-'               Cells(i + 3, j).Value = Str(pick + 2) & " " & Str(j + 7)    ' test
-                Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)
-            Else
-                Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j)
-            End If
-            ……
-```
+- Code : `IdeaGenerator_v0.11.bas`
+  <details>
+    <summary>Mainly changed parts</summary>
+
+  ```vba
+  'Option Explicit                                                            ' Cause an error : i, j are not declared strictly
+  ```
+  ```vba
+      ……
+      Dim n, postp, pick As Integer
+      ……
+      postp = Range("B2")
+      ……
+  ```
+  ```vba
+              ……
+              If postp = 1 Then
+  '               Cells(i + 3, j).Value = Str(pick + 2) & " " & Str(j + 7)    ' test
+                  Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7)
+              Else
+                  Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j)
+              End If
+              ……
+  ```
+  </details>
 
 
 ## [Idea Generator v0.10 (2022.05.18)](#list)
@@ -632,35 +636,44 @@ for my sister who is an aspiring writer
 - Can select the number of sentences generated
 - Test : Ok
 
-![Idea Generator v0.10](./Images/GenIdea_v0.10.PNG)  
-![Idea Generator v0.10](./Images/GenIdea_v0.10_dict.PNG)
+  ![Idea Generator v0.10](./Images/GenIdea_v0.10.PNG)  
+  ![Idea Generator v0.10](./Images/GenIdea_v0.10_dict.PNG)
 
-```vba
-Sub GenIdea()
+- Code : `IdeaGenerator_v0.10.bas`
+  <details>
+    <summary>Sub GenIdea()</summary>
 
-    Range("A4:F10000").ClearContents
+  ```vba
+  Sub GenIdea()
 
-    Dim n, pick As Integer
-    n = Range("B1")
+      Range("A4:F10000").ClearContents
 
-    For i = 1 To n
-        For j = 1 To 6
-            Randomize
-            pick = Int(Rnd * Sheet1.Cells(1, j)) + 1
+      Dim n, pick As Integer
+      n = Range("B1")
 
-'            Cells(i + 3, j).Value = Str(pick + 1) & " " & Str(j)   ' test
-            Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j)
-        Next j
-    Next i
+      For i = 1 To n
+          For j = 1 To 6
+              Randomize
+              pick = Int(Rnd * Sheet1.Cells(1, j)) + 1
 
-End Sub
-```
-```vba
-Private Sub btnRun_Click()
+  '            Cells(i + 3, j).Value = Str(pick + 1) & " " & Str(j)   ' test
+              Cells(i + 3, j).Value = Sheet1.Cells(pick + 2, j)
+          Next j
+      Next i
 
-    Application.Calculation = xlManual
-        Call GenIdea
-    Application.Calculation = xlAutomatic
+  End Sub
+  ```
+  </details>
+  <details>
+    <summary>Private Sub btnRun_Click()</summary>
 
-End Sub
-```
+  ```vba
+  Private Sub btnRun_Click()
+
+      Application.Calculation = xlManual
+          Call GenIdea
+      Application.Calculation = xlAutomatic
+
+  End Sub
+  ```
+  </details>
