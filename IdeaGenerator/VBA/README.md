@@ -1,4 +1,4 @@
-# [Idea Generator]
+# [Idea Generator](/)
 
 for my sister who is an aspiring writer
 
