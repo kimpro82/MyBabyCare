@@ -521,74 +521,78 @@ for my sister who is an aspiring writer
 &nbsp;&nbsp;- Change alignment automatically (left / center)  
 &nbsp;&nbsp;- Add spaces more naturally when choose to integrate
 
-![Idea Generator v0.12](./Images/GenIdea_v0.12.PNG)
+  ![Idea Generator v0.12](./Images/GenIdea_v0.12.PNG)
 
-#### Mainly changed parts of `IdeaGenerator_v0.12.bas`
-```vba
-Option Explicit
-```
-```vba
-    ……
-    ' Parameters
-    Dim n, postp, integrated, pick As Integer
-    ……
-    integrated = Range("D2")
+- Code : `IdeaGenerator_v0.12.bas`
+  <details>
+    <summary>Mainly changed parts</summary>
 
-    If integrated = 1 Then
-        Range("B2").Value = 1                                               ' an integrated sentence should contain postpositions
-        postp = Range("B2")
-        Range("A4:F10000").HorizontalAlignment = xlLeft                     ' left alignment when the sentence is integrated
-    Else
-        Range("A4:F10000").HorizontalAlignment = xlCenter                   ' center alignment when the sentence is not integrated
-    End If
-    ……
-```
-```vba
-    ……
-    ' Loop for i, j
-    Dim i, j As Integer
-    Dim sentence As String
+  ```vba
+  Option Explicit
+  ```
+  ```vba
+      ……
+      ' Parameters
+      Dim n, postp, integrated, pick As Integer
+      ……
+      integrated = Range("D2")
 
-    For i = 1 To n
+      If integrated = 1 Then
+          Range("B2").Value = 1                                               ' an integrated sentence should contain postpositions
+          postp = Range("B2")
+          Range("A4:F10000").HorizontalAlignment = xlLeft                     ' left alignment when the sentence is integrated
+      Else
+          Range("A4:F10000").HorizontalAlignment = xlCenter                   ' center alignment when the sentence is not integrated
+      End If
+      ……
+  ```
+  ```vba
+      ……
+      ' Loop for i, j
+      Dim i, j As Integer
+      Dim sentence As String
 
-        sentence = ""                                                       ' initialize the sentence for each row
+      For i = 1 To n
 
-        For j = 1 To 6
+          sentence = ""                                                       ' initialize the sentence for each row
 
-            ' Get a word randomly
-            ……
+          For j = 1 To 6
 
-            ' Integrated sentences
-            If integrated = 1 Then
+              ' Get a word randomly
+              ……
 
-                ' Judge where insert spaces
-                If j = 5 Then
-                    sentence = sentence & Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7) & " "
-                Else
-                    sentence = sentence & Sheet1.Cells(pick + 2, j) & Sheet1.Cells(2, j + 7) & " "
-                End If
+              ' Integrated sentences
+              If integrated = 1 Then
 
-                ' Print the completed sentence
-                If j = 6 Then
-                    Cells(i + 3, 1).Value = sentence
-                End If
+                  ' Judge where insert spaces
+                  If j = 5 Then
+                      sentence = sentence & Sheet1.Cells(pick + 2, j) & " " & Sheet1.Cells(2, j + 7) & " "
+                  Else
+                      sentence = sentence & Sheet1.Cells(pick + 2, j) & Sheet1.Cells(2, j + 7) & " "
+                  End If
 
-            ' Not integrated but contain postpositions
-            ElseIf postp = 1 Then
+                  ' Print the completed sentence
+                  If j = 6 Then
+                      Cells(i + 3, 1).Value = sentence
+                  End If
 
-                ……
+              ' Not integrated but contain postpositions
+              ElseIf postp = 1 Then
 
-            ' Neither integrated nor contain postpositions
-            Else
+                  ……
 
-                ……
+              ' Neither integrated nor contain postpositions
+              Else
 
-            End If
+                  ……
 
-        Next j
+              End If
 
-    Next i
-```
+          Next j
+
+      Next i
+  ```
+  </details>
 
 
 ## [Idea Generator v0.11 (2022.05.19)](#list)
