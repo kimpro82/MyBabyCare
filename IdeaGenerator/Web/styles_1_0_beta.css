@@ -1,0 +1,124 @@
+/* 
+  Idea Generator v1.0 Beta
+  author : kimpro82
+  date   : 2024.09.17
+*/
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+  }
+
+  header {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #eaeaea;
+    border-bottom: 2px solid #ddd;
+    position: absolute;
+    top: 0;
+  }
+
+  .header-center {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .select-container {
+    margin: 20px 0;
+  }
+
+  footer {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #eaeaea;
+    border-top: 2px solid #ddd;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .footer-left {
+    text-align: left;
+    font-size: 16px;
+  }
+
+  .footer-right {
+    text-align: right;
+    font-size: 16px;
+  }
+
+  #generator {
+    display: grid;
+    gap: 10px;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  #generator.grid-1 {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #generator.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #generator.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  #generator.grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #generator.grid-5 {
+    grid-template-columns: 1fr 1fr 1fr; /* 첫 번째 줄에 3개 */
+  }
+
+  #generator.grid-5 .card:nth-child(4),
+  #generator.grid-5 .card:nth-child(5) {
+    grid-column: span 1; /* 두 번째 줄의 2개를 중앙에 배치 */
+    justify-self: center; /* 가운데 정렬 */
+  }
+
+  #generator.grid-6 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card {
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  #output {
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  #shuffleBtn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 20px;
+  }
