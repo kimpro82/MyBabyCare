@@ -77,7 +77,6 @@ A gift made for my aspiring writer sister as a reward for loyalty
       ……
     </footer>
   </body>
-  </html>
   ```
   ```html
   <body>
@@ -96,7 +95,6 @@ A gift made for my aspiring writer sister as a reward for loyalty
       <div class="footer-right">2024.09.17&nbsp;&nbsp;</div>
     </footer>
   </body>
-  </html>
   ```
   </details>
   <details>
