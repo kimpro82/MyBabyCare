@@ -15,7 +15,7 @@ A gift made for my aspiring writer sister as a reward for loyalty
   - Enhancements to the word shuffle process, including visualization
     - Display "?" on word cards at the start
     - Visualize the word shuffle process
-      - Added acceleration, attempted fade-in-fade-out effect but it failed
+      - Tried adding acceleration, attempted fade-in-fade-out effect but it failed
     - Prevented duplicate word selection
     - Replaced spaces in words with `<br>`
     - Used the same word list as version `1.0`
