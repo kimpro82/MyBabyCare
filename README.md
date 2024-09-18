@@ -6,6 +6,7 @@ Rock N' Roll Baby!
 ## [Idea Generator](/IdeaGenerator/)
 
 ### [\<Web>](/IdeaGenerator/Web/README.md)
+- [Idea Generator v1.1 Beta (2024.09.18)](/IdeaGenerator/Web/README.md#idea-generator-v11-beta-20240918)
 - [Idea Generator v1.0 Beta (2024.09.17)](/IdeaGenerator/Web/README.md#idea-generator-v10-beta-20240917)
 
 ### [\<VBA>](/IdeaGenerator/VBA/README.md)
