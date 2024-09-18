@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<!--
+  Idea Generator v1.1 Beta
+  author : kimpro82
+  date   : 2024.09.18
+-->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
+  <title>Idea Generator v1.1 beta</title>
+  <link rel="stylesheet" href="idea_generator_1_1_beta.css">
+  <script defer src="idea_generator_1_1_beta.js"></script>
+</head>
+<body>
+  <header>
+    <div class="header-center">Idea Generator v1.1 Beta</div>
+  </header>
+
+  <!-- ComboBox for selecting the number of words to generate -->
+  <div class="select-container">
+    <label for="wordCount">원하는 단어 수를 선택해 주세요 : </label>
+    <select id="wordCount">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3" selected>3</option>       <!-- Default value set to 3 -->
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+    </select>
+  </div>
+
+  <!-- Container for displaying generated idea cards -->
+  <div id="generator"></div>
+
+  <!-- Button to shuffle and generate new idea cards -->
+  <div class="button-container">
+    <button id="shuffleBtn">Shuffle</button>
+  </div>
+
+  <footer>
+    <!-- Link to GitHub profile, opens in new tab -->
+    <div class="footer-left">
+      <!-- &nbsp;&nbsp;
+      <a href="https://github.com/kimpro82/MyFamilyCare" target="_blank">
+        kimpro82
+      </a> -->
+    </div>
+
+    <!-- Display the current date -->
+    <div class="footer-right">2024.09.18&nbsp;&nbsp;</div>
+  </footer>
+</body>
+</html>
