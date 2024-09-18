@@ -349,7 +349,7 @@ A gift made for my aspiring writer sister as a reward for loyalty
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
     <title>Idea Generator</title>
-    <link rel="stylesheet" href="styles_1_0_beta.css">
+    <link rel="stylesheet" href="idea_generator_1_0_beta.css">
     <script defer src="idea_generator_1_0_beta.js"></script>
   </head>
   <body>
@@ -509,7 +509,7 @@ A gift made for my aspiring writer sister as a reward for loyalty
   ```
   </details>
   <details>
-    <summary>styles_1_0_beta.css</summary>
+    <summary>idea_generator_1_0_beta.css</summary>
 
   ```css
   body {
