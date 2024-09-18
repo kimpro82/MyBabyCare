@@ -1,0 +1,135 @@
+/* 
+  Idea Generator v1.1 Beta
+  author : kimpro82
+  date   : 2024.09.18
+*/
+
+body {
+  display: flex;                        /* Center content using Flexbox */
+  flex-direction: column;               /* Vertical layout for header, generator, footer */
+  justify-content: center;              /* Vertically center content */
+  align-items: center;                  /* Horizontally center content */
+  height: 100vh;                        /* Full viewport height */
+  margin: 0;                            /* Remove default margins */
+  background-color: #f4f4f4;            /* Light background color */
+}
+
+header {
+  /* Header styling and positioning */
+  width: 100%;
+  text-align: center;
+  padding: 0.625em 0;
+  background-color: #eaeaea;
+  border-bottom: 0.125em solid #ddd;
+  position: absolute;
+  top: 0;
+}
+
+.header-center {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.select-container {
+  /* Margin for combobox */
+  margin-top: -2em;
+  margin-bottom: 1em;
+}
+
+footer {
+  /* Footer styling and positioning */
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.625em 1.25em;
+  background-color: #eaeaea;
+  border-top: 0.125em solid #ddd;
+  position: absolute;
+  bottom: 0;
+}
+
+.footer-left, .footer-right {
+  font-size: 1em;
+}
+
+#generator {
+  /* Grid layout for cards */
+  display: grid;
+  gap: 0.625em;
+  text-align: center;
+  margin-top: 1em;
+}
+
+/* Grid layout for different numbers of cards */
+#generator.grid-1 { grid-template-columns: repeat(1, 1fr); }
+#generator.grid-2 { grid-template-columns: repeat(2, 1fr); }
+#generator.grid-3 { grid-template-columns: repeat(3, 1fr); }
+#generator.grid-4 { grid-template-columns: repeat(2, 1fr); }
+#generator.grid-5 { grid-template-columns: 1fr 1fr 1fr; }
+#generator.grid-5 .card:nth-child(4),
+#generator.grid-5 .card:nth-child(5) {
+  grid-column: span 1;
+}
+#generator.grid-6 { grid-template-columns: repeat(3, 1fr); }
+
+.card {
+  /* Card styling */
+  position: relative;
+  padding: 1em;
+  border: 0.0625em solid #ddd;
+  background-color: #fff;
+  border-radius: 0.5em;
+  cursor: pointer;
+  overflow: hidden;
+  min-width: 4.25em;
+  min-height: 1.875em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card .text-wrapper {
+  /* Text wrapper positioning and styling */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  font-weight: bold;
+  transition: opacity 0.5s ease;
+  overflow: hidden;
+}
+
+#output {
+  /* Output text styling */
+  margin-top: 1.25em;
+  font-weight: bold;
+  text-align: center;
+}
+
+#shuffleBtn {
+  /* Shuffle button styling */
+  margin-top: 1em;
+  padding: 0.75em 1em;
+  font-size: 1.25em;
+  font-weight: bold;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 0.3125em;
+  cursor: pointer;
+  position: relative;
+}
+
+.button-container {
+  /* Button container layout */
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1.25em;
+}

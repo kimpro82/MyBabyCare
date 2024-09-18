@@ -5,7 +5,322 @@ A gift made for my aspiring writer sister as a reward for loyalty
 
 ### \<List>
 
+- [Idea Generator v1.1 Beta (2024.09.18)](#idea-generator-v11-beta-20240918)
 - [Idea Generator v1.0 Beta (2024.09.17)](#idea-generator-v10-beta-20240917)
+
+
+## [Idea Generator v1.1 Beta (2024.09.18)](#list)
+
+- Improvements from [Idea Generator v1.0 Beta (2024.09.17)](#idea-generator-v10-beta-20240917)
+  - Enhancements to the word shuffle process, including visualization
+    - Display "?" on word cards at the start
+    - Visualize the word shuffle process
+      - Tried adding acceleration, attempted fade-in-fade-out effect but it failed
+    - Prevented duplicate word selection
+    - Replaced spaces in words with `<br>`
+    - Used the same word list as version `1.0`
+  - *CSS*: Applied relative values for size and positioning properties
+
+  ![Idea Generator v1.1 Beta](./Images/IdeaGenerator_1_1_beta.gif)
+
+- Future improvements
+  - Word list enhancement: quantitative expansion, thematic categorization, etc
+  - Change word count selection method: switch from *combobox* to a more mobile-friendly approach
+- Code
+  <details>
+    <summary>idea_generator_1_1_beta.html (mainly changed parts)</summary>
+
+  ```html
+  ……
+  <body>
+    ……
+
+    <!-- ComboBox for selecting the number of words to generate -->
+    <div class="select-container">
+      <label for="wordCount">원하는 단어 수를 선택해 주세요 : </label>
+      ……
+    </div>
+    ……
+  </body>
+  ……
+  ```
+  </details>
+  <details>
+    <summary>idea_generator_1_1_beta.css (almost new)</summary>
+
+  ```css
+  body {
+    display: flex;                        /* Center content using Flexbox */
+    flex-direction: column;               /* Vertical layout for header, generator, footer */
+    justify-content: center;              /* Vertically center content */
+    align-items: center;                  /* Horizontally center content */
+    height: 100vh;                        /* Full viewport height */
+    margin: 0;                            /* Remove default margins */
+    background-color: #f4f4f4;            /* Light background color */
+  }
+
+  header {
+    /* Header styling and positioning */
+    width: 100%;
+    text-align: center;
+    padding: 0.625em 0;
+    background-color: #eaeaea;
+    border-bottom: 0.125em solid #ddd;
+    position: absolute;
+    top: 0;
+  }
+
+  .header-center {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .select-container {
+    /* Margin for combobox */
+    margin-top: -2em;
+    margin-bottom: 1em;
+  }
+
+  footer {
+    /* Footer styling and positioning */
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.625em 1.25em;
+    background-color: #eaeaea;
+    border-top: 0.125em solid #ddd;
+    position: absolute;
+    bottom: 0;
+  }
+
+  .footer-left, .footer-right {
+    font-size: 1em;
+  }
+  ```
+  ```css
+  #generator {
+    /* Grid layout for cards */
+    display: grid;
+    gap: 0.625em;
+    text-align: center;
+    margin-top: 1em;
+  }
+
+  /* Grid layout for different numbers of cards */
+  #generator.grid-1 { grid-template-columns: repeat(1, 1fr); }
+  #generator.grid-2 { grid-template-columns: repeat(2, 1fr); }
+  #generator.grid-3 { grid-template-columns: repeat(3, 1fr); }
+  #generator.grid-4 { grid-template-columns: repeat(2, 1fr); }
+  #generator.grid-5 { grid-template-columns: 1fr 1fr 1fr; }
+  #generator.grid-5 .card:nth-child(4),
+  #generator.grid-5 .card:nth-child(5) {
+    grid-column: span 1;
+  }
+  #generator.grid-6 { grid-template-columns: repeat(3, 1fr); }
+
+  .card {
+    /* Card styling */
+    position: relative;
+    padding: 1em;
+    border: 0.0625em solid #ddd;
+    background-color: #fff;
+    border-radius: 0.5em;
+    cursor: pointer;
+    overflow: hidden;
+    min-width: 4.25em;
+    min-height: 1.875em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .card .text-wrapper {
+    /* Text wrapper positioning and styling */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: opacity 0.5s ease;
+    overflow: hidden;
+  }
+
+  #output {
+    /* Output text styling */
+    margin-top: 1.25em;
+    font-weight: bold;
+    text-align: center;
+  }
+  ```
+  ```css
+  #shuffleBtn {
+    /* Shuffle button styling */
+    margin-top: 1em;
+    padding: 0.75em 1em;
+    font-size: 1.25em;
+    font-weight: bold;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 0.3125em;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .button-container {
+    /* Button container layout */
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1.25em;
+  }
+  ```
+  </details>
+  <details>
+    <summary>idea_generator_1_1_beta.ts (mainly changed parts)</summary>
+
+  ```ts
+  // Constants for animation
+  const MAX_SHUFFLE_COUNT: number = 20;  // Number of rapid word changes
+  const SHUFFLE_INTERVAL: number = 20;  // Interval between word changes in milliseconds
+  ```
+  ```ts
+  // This event listener triggers when the DOM content is fully loaded
+  document.addEventListener('DOMContentLoaded', async () => {
+    ……
+
+    /**
+     * Generates a random selection of unique words.
+     * 
+     * @param {number} count - The number of words to generate.
+     * @returns {string[]} An array of randomly selected words.
+     */
+    function generateWords(count: number): string[] {
+      if (count > words.length) {
+        throw new Error("Requested word count exceeds available unique words.");
+      }
+
+      const selectedWords: string[] = [];
+      const usedIndices: Set<number> = new Set();
+
+      while (selectedWords.length < count) {
+        const randomIndex = Math.floor(Math.random() * words.length);
+        if (!usedIndices.has(randomIndex)) {
+          usedIndices.add(randomIndex);
+          // Replace space with <br>
+          const word = words[randomIndex].replace(/ /g, "<br>");
+          selectedWords.push(word);
+        }
+      }
+
+      return selectedWords;
+    }
+
+    ……
+  });
+  ```
+  ```ts
+  // This event listener triggers when the DOM content is fully loaded
+  document.addEventListener('DOMContentLoaded', async () => {
+    ……
+
+    /**
+     * Displays the selected number of words in the 'generator' container.
+     * Initially shows "?" and then animates the words when shuffled.
+     * 
+     * @param {number} count - The number of words to display.
+     */
+    function displayWords(count: number): void {
+      generator.innerHTML = ''; // Clear any previously displayed words
+      generator.className = `grid-${count}`; // Set the grid class for layout
+
+      const selectedWords = Array(count).fill("?"); // Initially show "?" on each card
+
+      selectedWords.forEach((word) => {
+        const card = document.createElement('div'); // Create a new card element for each word
+        card.className = 'card'; // Apply the 'card' class for styling
+
+        // Create a wrapper for the text
+        const textWrapper = document.createElement('div');
+        textWrapper.className = 'text-wrapper';
+        textWrapper.innerHTML = word; // Set the "?" as the initial content of the wrapper
+
+        card.appendChild(textWrapper); // Append the wrapper to the card
+        generator.appendChild(card); // Append the card to the generator container
+      });
+    }
+
+    ……
+  });
+  ```
+  ```ts
+  // This event listener triggers when the DOM content is fully loaded
+  document.addEventListener('DOMContentLoaded', async () => {
+    ……
+
+    /**
+     * Animates the shuffling of words on the cards.
+     * 
+     * @param {number} count - The number of words to shuffle and display.
+     */
+    function animateShuffle(count: number): void {
+      const cards = Array.from(generator.getElementsByClassName('card')) as HTMLElement[];
+      const selectedWords = generateWords(count);
+      let shuffleCount = 0;
+
+      function updateWords() {
+        cards.forEach(card => {
+          const textWrapper = card.querySelector('.text-wrapper') as HTMLElement;
+          const randomIndex = Math.floor(Math.random() * words.length);
+          textWrapper.innerHTML = words[randomIndex].replace(/ /g, "<br>"); // Replace space with <br>
+        });
+
+        shuffleCount++;
+        if (shuffleCount < MAX_SHUFFLE_COUNT) {
+          setTimeout(updateWords, SHUFFLE_INTERVAL); // Change words quickly
+        } else {
+          // Set final words after shuffling
+          cards.forEach((card, index) => {
+            const textWrapper = card.querySelector('.text-wrapper') as HTMLElement;
+            textWrapper.innerHTML = selectedWords[index]; // Final words
+          });
+        }
+      }
+
+      // Start the shuffling
+      updateWords();
+    }
+
+    ……
+  });
+  ```
+  ```ts
+  // This event listener triggers when the DOM content is fully loaded
+  document.addEventListener('DOMContentLoaded', async () => {
+    ……
+
+    // Event listener to update the word count and re-display words when the dropdown selection changes
+    wordCountSelect.addEventListener('change', (event) => {
+      const selectedCount = parseInt((event.target as HTMLSelectElement).value, 10);
+      displayWords(selectedCount); // Redisplay with "?" initially
+    });
+
+    // Event listener to shuffle and regenerate the words when the 'Shuffle' button is clicked
+    shuffleBtn.addEventListener('click', () => {
+      const selectedCount = parseInt(wordCountSelect.value, 10);
+      animateShuffle(selectedCount); // Animate shuffling of words
+    });
+
+    ……
+  });
+  ```
+  </details>
 
 
 ## [Idea Generator v1.0 Beta (2024.09.17)](#list)
@@ -34,7 +349,7 @@ A gift made for my aspiring writer sister as a reward for loyalty
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive design for mobile devices -->
     <title>Idea Generator</title>
-    <link rel="stylesheet" href="styles_1_0_beta.css">
+    <link rel="stylesheet" href="idea_generator_1_0_beta.css">
     <script defer src="idea_generator_1_0_beta.js"></script>
   </head>
   <body>
@@ -194,7 +509,7 @@ A gift made for my aspiring writer sister as a reward for loyalty
   ```
   </details>
   <details>
-    <summary>styles_1_0_beta.css</summary>
+    <summary>idea_generator_1_0_beta.css</summary>
 
   ```css
   body {
