@@ -6,7 +6,7 @@ Rock N' Roll Baby!
 ## For my baby
 
 ### [Mad Typer](/MadTyper/)
-- [Mad Typer v0.9 Beta (2024.11.18)](#mad-typer-v09-beta-20241118)
+- [Mad Typer v0.9 Beta (2024.11.18)](/MadTyper/README.md#mad-typer-v09-beta-20241118)
 
 ### [Touch-Color-Changing Tiles for Babies](/MadTyper/TouchColorChangingTiles/)
 - [Touch-Color-Changing Tiles for Babies (2024.01.18)](/TouchColorChangingTiles/README.md#touch-color-changing-tiles-for-babies-20240118)
