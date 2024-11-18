@@ -1,5 +1,12 @@
 [
     {
+        "category": "Baby",
+        "title": "Mad Typer v0.9 Beta",
+        "date": "2024.11.18",
+        "url": "../MadTyper/MadTyper.html",
+        "comment": "<img src=\"../MadTyper/Images/MadTyper_0.9.gif\" width=100%>"
+    },
+    {
         "category": "Sister",
         "title": "Idea Generator v1.1 Beta",
         "date": "2024.09.18",
