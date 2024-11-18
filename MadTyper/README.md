@@ -18,8 +18,8 @@ But you must not break the keyboard **again**, son
   ![Mad Typer v0.9 Beta](./Images/MadTyper_0.9.gif)
 
 - Future improvements
-  - Add support for Korean input: Currently unavailable due to IME deactivation  
-  - Integrate with the Web Speech API to provide text-to-speech functionality 
+  - Add support for Korean input: Currently unavailable due to IME deactivation
+  - Integrate with the Web Speech API to provide text-to-speech functionality
 
 - Code
   <details>
