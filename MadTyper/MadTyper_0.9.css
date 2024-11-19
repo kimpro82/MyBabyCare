@@ -1,0 +1,33 @@
+/* 
+    Title  : Mad Typer for My Son v0.9 Beta
+    Author : kimpro82
+    Date   : 2024-11-18
+ */
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+h1, h2 {
+    top: 10px;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: #aaa;
+}
+h1 {
+    font-size: 3em;
+}
+h2 {
+    font-size: 1.25em;
+}
+
+.typed-char {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    font-weight: bold;
+}

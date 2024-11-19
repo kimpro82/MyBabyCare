@@ -2,5 +2,6 @@
 
 /Hosting/*.js linguist-vendored
 /IdeaGenerator/Web/*.js linguist-vendored
+/MadTyper/*.js linguist-vendored
 /TouchColorChangingTiles/*.js linguist-vendored
 /WeddingAnniversary/*ts.js linguist-vendored

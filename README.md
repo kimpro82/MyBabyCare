@@ -3,22 +3,21 @@
 Rock N' Roll Baby!
 
 
-## [Idea Generator](/IdeaGenerator/)
+## For my baby
 
-### [\<Web>](/IdeaGenerator/Web/README.md)
-- [Idea Generator v1.1 Beta (2024.09.18)](/IdeaGenerator/Web/README.md#idea-generator-v11-beta-20240918)
-- [Idea Generator v1.0 Beta (2024.09.17)](/IdeaGenerator/Web/README.md#idea-generator-v10-beta-20240917)
+### [Mad Typer](/MadTyper/)
+- [Mad Typer v0.9 Beta (2024.11.18)](/MadTyper/README.md#mad-typer-v09-beta-20241118)
 
-### [\<VBA>](/IdeaGenerator/VBA/README.md)
-- [Idea Generator v0.22 (2022.06.06)](/IdeaGenerator/VBA/README.md#idea-generator-v022-20220606)
-- [Idea Generator v0.21 (2022.06.05)](/IdeaGenerator/VBA/README.md#idea-generator-v021-20220605)
-- [Idea Generator v0.20 (2022.06.03)](/IdeaGenerator/VBA/README.md#idea-generator-v020-20220603)
-- [Idea Generator v0.12 (2022.05.20)](/IdeaGenerator/VBA/README.md#idea-generator-v012-20220520)
-- [Idea Generator v0.11 (2022.05.19)](/IdeaGenerator/VBA/README.md#idea-generator-v011-20220519)
-- [Idea Generator v0.10 (2022.05.18)](/IdeaGenerator/VBA/README.md#idea-generator-v010-20220518)
+### [Touch-Color-Changing Tiles for Babies](/MadTyper/TouchColorChangingTiles/)
+- [Touch-Color-Changing Tiles for Babies (2024.01.18)](/TouchColorChangingTiles/README.md#touch-color-changing-tiles-for-babies-20240118)
+
+### [Baby Focus Book](/BabyFocusBook/)
+- [Black & White 1 (2021.06.15)](/BabyFocusBook/README.md#black--white-1-20210615)
 
 
-## [Wedding Anniversary](/WeddingAnniversary/)
+## For my wife
+
+### [Wedding Anniversary](/WeddingAnniversary/)
 
 - [9th Wedding Anniversary 2 (2024.03.07)](/WeddingAnniversary/README.md#9th-wedding-anniversary-2-20240307)
 - [9th Wedding Anniversary 1 (2024.03.07)](/WeddingAnniversary/README.md#9th-wedding-anniversary-1-20240307)
@@ -29,11 +28,18 @@ Rock N' Roll Baby!
 - [5th Wedding Anniversary (2020.03.07)](/WeddingAnniversary/README.md#5th-wedding-anniversary-20200307)
 
 
-## [Touch-Color-Changing Tiles for Babies](/TouchColorChangingTiles/)
+## For my sister
 
-- [Touch-Color-Changing Tiles for Babies (2024.01.18)](/TouchColorChangingTiles/README.md#touch-color-changing-tiles-for-babies-20240118)
+### [Idea Generator](/IdeaGenerator/)
 
+#### [\<Web>](/IdeaGenerator/Web/README.md)
+- [Idea Generator v1.1 Beta (2024.09.18)](/IdeaGenerator/Web/README.md#idea-generator-v11-beta-20240918)
+- [Idea Generator v1.0 Beta (2024.09.17)](/IdeaGenerator/Web/README.md#idea-generator-v10-beta-20240917)
 
-## [Baby Focus Book](/BabyFocusBook/)
-
-- [Black & White 1 (2021.06.15)](/BabyFocusBook/README.md#black--white-1-20210615)
+#### [\<VBA>](/IdeaGenerator/VBA/README.md)
+- [Idea Generator v0.22 (2022.06.06)](/IdeaGenerator/VBA/README.md#idea-generator-v022-20220606)
+- [Idea Generator v0.21 (2022.06.05)](/IdeaGenerator/VBA/README.md#idea-generator-v021-20220605)
+- [Idea Generator v0.20 (2022.06.03)](/IdeaGenerator/VBA/README.md#idea-generator-v020-20220603)
+- [Idea Generator v0.12 (2022.05.20)](/IdeaGenerator/VBA/README.md#idea-generator-v012-20220520)
+- [Idea Generator v0.11 (2022.05.19)](/IdeaGenerator/VBA/README.md#idea-generator-v011-20220519)
+- [Idea Generator v0.10 (2022.05.18)](/IdeaGenerator/VBA/README.md#idea-generator-v010-20220518)
