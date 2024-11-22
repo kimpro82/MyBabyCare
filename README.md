@@ -5,6 +5,9 @@ Rock N' Roll Baby!
 
 ## For my baby
 
+### [Dinosaur](/Dinosaur/)
+- [Brachiosaurus (2024.11.22)](/Dinosaur/README.md#brachiosaurus-20241122)
+
 ### [Mad Typer](/MadTyper/)
 - [Mad Typer v0.9 Beta (2024.11.18)](/MadTyper/README.md#mad-typer-v09-beta-20241118)
 
