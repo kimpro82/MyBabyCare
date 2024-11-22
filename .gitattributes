@@ -1,6 +1,8 @@
 *.bas linguist-language=VBA
 
 /Hosting/*.js linguist-vendored
+
+/Dinosaur/*.js linguist-vendored
 /IdeaGenerator/Web/*.js linguist-vendored
 /MadTyper/*.js linguist-vendored
 /TouchColorChangingTiles/*.js linguist-vendored
