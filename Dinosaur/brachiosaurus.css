@@ -1,0 +1,25 @@
+/*
+    Brachiosaurus for My Son
+    kimpro82 / 2024.11.22
+ */
+
+ h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+#brachio-svg {
+    width: 80%;
+    height: auto;
+    animation: move 5s ease-in infinite;
+}
+
+@keyframes move {
+    from { transform: translateX(105%); }
+    to { transform: translateX(-105%); }
+}
