@@ -3,8 +3,8 @@
         "category": "Sister",
         "title": "Web Lession 1 : HTML ",
         "date": "2024.12.23",
-        "url": "../WebLesson/lesson_01.html",
-        "comment": "<img src=\"../WebLesson/Images/WebLesson_01.png\" width=100%>"
+        "url": "../WebLessons/lesson_01.html",
+        "comment": "<img src=\"../WebLessons/Images/WebLesson_01.png\" width=100%>"
     },
     {
         "category": "Baby",
