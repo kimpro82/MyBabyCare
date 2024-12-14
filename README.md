@@ -33,7 +33,7 @@ Rock N' Roll Baby!
 
 ## For my sister
 
-### [Web Lesson](/WebLessons/)
+### [Web Lessons](/WebLessons/)
 
 - [Lession 1 : HTML (2024.12.13)](/WebLessons/README.md#lession-1--html-20241213)
 

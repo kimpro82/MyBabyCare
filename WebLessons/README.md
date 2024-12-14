@@ -1,4 +1,4 @@
-# [Web Lesson](/README.md#web-lesson)
+# [Web Lessons](/README.md#web-lessons)
 
 For my sister
 
