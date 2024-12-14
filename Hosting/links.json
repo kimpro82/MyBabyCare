@@ -1,5 +1,19 @@
 [
     {
+        "category": "Sister",
+        "title": "Web Lession 1 : HTML ",
+        "date": "2024.12.23",
+        "url": "../WebLessons/lesson_01.html",
+        "comment": "<img src=\"../WebLessons/Images/WebLesson_01.png\" width=100%>"
+    },
+    {
+        "category": "Baby",
+        "title": "Dinosaur : Brachiosaurus",
+        "date": "2024.11.22",
+        "url": "../Dinosaur/brachiosaurus.html",
+        "comment": "<img src=\"../Dinosaur/Images/brachiosaurus.gif\" width=100%>"
+    },
+    {
         "category": "Baby",
         "title": "Mad Typer v0.9 Beta",
         "date": "2024.11.18",

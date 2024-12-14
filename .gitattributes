@@ -1,4 +1,5 @@
 *.bas linguist-language=VBA
+*.svg linguist-detectable
 
 /Hosting/*.js linguist-vendored
 
